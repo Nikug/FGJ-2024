@@ -2,8 +2,7 @@ extends Node
 
 @export var delay_between_spawns = 1.0
 @export var platform_speed = 5.0
-@export var spawn_min: Vector3 = Vector3.ZERO
-@export var spawn_max: Vector3 = Vector3.ZERO
+@export var jump_gap = 100.0
 
 var platform
 var t = 0.0
