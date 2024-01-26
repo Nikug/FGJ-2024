@@ -2,7 +2,7 @@ extends Area2D
 
 @export var speed = 400
 var screen_size
-
+@onready var _animated_sprite = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,12 +20,16 @@ func _process(delta):
 		velocity.y += 1
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
+	if Input.is_action_just_released("slap"):
+		_animated_sprite.play("slap")
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
+		_animated_sprite.play("walk")
 	else:
-		$AnimatedSprite2D.stop()
+		if _animated_sprite.animation != "slap":
+			_animated_sprite.play("idle")
 		
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
+	
