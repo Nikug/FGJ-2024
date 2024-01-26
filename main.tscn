@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8a33mrirgi1"]
+[gd_scene load_steps=6 format=3 uid="uid://day5aamg1cc62"]
 
+[ext_resource type="Texture2D" uid="uid://c8k5edi5go3f4" path="res://assets/placeholder_backgound.png" id="1_ekdav"]
 [ext_resource type="PackedScene" uid="uid://cy2c6b67uq4c6" path="res://Scenes/PlatformSpawner/PlatformSpawner.tscn" id="1_jw306"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t7urw"]
@@ -26,8 +27,14 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-projection = 1
-size = 6.67117
 
 [node name="PlatformSpawner" parent="." instance=ExtResource("1_jw306")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5129, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="bACkGrOuNd" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ekdav")
