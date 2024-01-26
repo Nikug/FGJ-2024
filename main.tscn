@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8a33mrirgi1"]
+[gd_scene load_steps=5 format=3 uid="uid://c8a33mrirgi1"]
+
+[ext_resource type="PackedScene" uid="uid://cy2c6b67uq4c6" path="res://Scenes/PlatformSpawner/PlatformSpawner.tscn" id="1_jw306"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t7urw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -24,3 +26,6 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="PlatformSpawner" parent="." instance=ExtResource("1_jw306")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
