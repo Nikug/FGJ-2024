@@ -1,6 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dks5oyiuuctu2"]
 
-[ext_resource type="Texture2D" uid="uid://c8k5edi5go3f4" path="res://assets/placeholder_backgound.png" id="1_n5q7y"]
+[ext_resource type="Texture2D" uid="uid://dkfavv7lms6s2" path="res://Art/background1.jpg" id="1_em4mw"]
 
 [node name="BAcKGrOuNdWaLl" type="Sprite3D"]
-texture = ExtResource("1_n5q7y")
+texture = ExtResource("1_em4mw")
+region_enabled = true
+region_rect = Rect2(0, 350, 1024, 660)

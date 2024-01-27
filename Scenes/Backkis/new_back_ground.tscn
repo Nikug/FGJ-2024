@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://caaqhx1wu3fyp"]
+
+[ext_resource type="Script" path="res://Scenes/Backkis/new_back_ground.gd" id="1_bweps"]
+[ext_resource type="Texture2D" uid="uid://dkfavv7lms6s2" path="res://Art/background1.jpg" id="1_oql8t"]
+[ext_resource type="Texture2D" uid="uid://1sw4vqh1rahv" path="res://Art/background2.jpg" id="2_dt321"]
+
+[node name="New_Back-ground" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32572, 0, 0)
+script = ExtResource("1_bweps")
+
+[node name="Body1" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.24, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Body1"]
+modulate = Color(0.654902, 0.654902, 0.654902, 1)
+pixel_size = 0.02
+texture = ExtResource("1_oql8t")
+region_enabled = true
+region_rect = Rect2(0, 350, 1024, 660)
+
+[node name="Body2" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.24, 0, 0)
+
+[node name="Sprite3D2" type="Sprite3D" parent="Body2"]
+flip_h = true
+modulate = Color(0.807843, 0.807843, 0.807843, 1)
+pixel_size = 0.02
+texture = ExtResource("2_dt321")
+region_enabled = true
+region_rect = Rect2(0, 350, 1024, 660)
