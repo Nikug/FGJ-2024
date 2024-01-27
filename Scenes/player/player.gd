@@ -80,14 +80,16 @@ func _process(_delta):
 				item.get_slapped()
 				score_manager.increment_happiness(player_id)
 				break
-		if collision.get_collider().is_in_group("killzone"):
-			_DIE()
-			break
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	_check_mood()
+
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider().is_in_group("killzone"):
+			_DIE()
 
 	if is_on_wall() and not just_hopped:
 		is_hopping_in_your_hood = false
