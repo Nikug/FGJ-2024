@@ -23,3 +23,7 @@ func _process(delta):
 		pass
 		# Add player to gmaState
 		#$gameState.
+
+func _input(event: InputEvent):
+	print(event.device)
+	print(event.is_action_pressed("yoink"))

@@ -4,25 +4,25 @@ extends CharacterBody3D
 @export var gravity = -100.0
 @onready var _animated_sprite = $AnimatedSprite2D
 var target_velocity = Vector3.ZERO
+@export var player_id = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	var direction = Vector3.ZERO  # The player's movement vector.
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right_%s" % [player_id]):
 		direction.x += 1
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left_%s" % [player_id]):
 		direction.x -= 1
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_pressed("move_down_%s" % [player_id]):
 		direction.y -= 1
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_pressed("move_up_%s" % [player_id]):
 		direction.y += 1
-	if Input.is_action_just_released("slap"):
+	if Input.is_action_just_released("slap_%s" % [player_id]):
 		_slap()
 
 	if direction != Vector3.ZERO:
