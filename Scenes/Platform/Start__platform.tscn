@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dthtas16ms1g1"]
+
+[ext_resource type="PackedScene" uid="uid://dxuhg0lv4088a" path="res://Scenes/Platform/Platform.tscn" id="1_i5fu0"]
+
+[sub_resource type="GDScript" id="GDScript_asej6"]
+script/source = "extends CharacterBody3D
+
+@export var movement_velocity = Vector3.ZERO
+
+
+func _physics_process(_delta):
+	# Speed has already been set when this is spawned
+	# Hopefully
+	velocity = movement_velocity
+	move_and_slide()
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uue55"]
+size = Vector3(21.6248, 3.05426, 0.5)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c8v5q"]
+load_path = "res://.godot/imported/Placeholder.png-392916f624610ecaca7d017e2ca6984f.s3tc.ctex"
+
+[node name="Platform" instance=ExtResource("1_i5fu0")]
+script = SubResource("GDScript_asej6")
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_uue55")
+
+[node name="Sprite3D" parent="." index="1"]
+transform = Transform3D(15, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+texture = SubResource("CompressedTexture2D_c8v5q")
