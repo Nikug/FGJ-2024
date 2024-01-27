@@ -137,3 +137,6 @@ shape = SubResource("CapsuleShape3D_32s5f")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [node name="WalkPlayer" type="AudioStreamPlayer3D" parent="."]
+
+[node name="ConfettiPosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.697518, -0.189176, 0)
