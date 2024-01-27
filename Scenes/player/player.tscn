@@ -1,18 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://bru13edxlte41"]
+[gd_scene load_steps=19 format=3 uid="uid://bru13edxlte41"]
 
 [ext_resource type="Script" path="res://Scenes/player/player.gd" id="1_xuaj4"]
 [ext_resource type="Texture2D" uid="uid://ut4avnyhfvx3" path="res://Cats/NH-1.png" id="2_1gega"]
-[ext_resource type="Texture2D" uid="uid://ut6ygbq1ixfe" path="res://assets/player/enemyWalking_1.png" id="2_ebj4n"]
-[ext_resource type="Texture2D" uid="uid://c5prmmf7rn1bb" path="res://assets/player/enemyWalking_2.png" id="3_iu6o3"]
-[ext_resource type="Texture2D" uid="uid://ef3cg2k4a8vh" path="res://assets/player/enemyFlyingAlt_1.png" id="4_6tyrl"]
-[ext_resource type="Texture2D" uid="uid://bvgopg2s6c0ci" path="res://assets/player/enemyFlyingAlt_2.png" id="5_3t188"]
 [ext_resource type="Texture2D" uid="uid://djtlvb1epvd4m" path="res://Cats/N-1.png" id="6_b26tw"]
+[ext_resource type="Texture2D" uid="uid://5fml6qigidq8" path="res://Cats/H-1.png" id="6_rpsmo"]
+[ext_resource type="Texture2D" uid="uid://71wef8gbnu88" path="res://Cats/H-2.png" id="7_4ifc8"]
 [ext_resource type="Texture2D" uid="uid://bleq0sowll4oq" path="res://Cats/N-2.png" id="7_dd2gk"]
 [ext_resource type="Texture2D" uid="uid://sqg4ki5erlkc" path="res://Cats/NH-2.png" id="7_vwhoa"]
 [ext_resource type="Texture2D" uid="uid://dfov3okhihhjp" path="res://Cats/NH-3.png" id="8_flc1s"]
 [ext_resource type="Texture2D" uid="uid://co8runigs2nmx" path="res://Cats/N-3.png" id="8_lse4g"]
+[ext_resource type="Texture2D" uid="uid://era81nhlcfxi" path="res://Cats/H-3.png" id="8_xv5k7"]
+[ext_resource type="Texture2D" uid="uid://bdm0qj6mskn31" path="res://Cats/H-4.png" id="9_5q4as"]
 [ext_resource type="Texture2D" uid="uid://bxadbjgpj71l6" path="res://Cats/NH-4.png" id="9_cojjd"]
 [ext_resource type="Texture2D" uid="uid://xq7qhxgac5rt" path="res://Cats/N-4.png" id="9_q22u0"]
+[ext_resource type="Texture2D" uid="uid://f3l0bsikhj44" path="res://Cats/SLAP-1.png" id="14_jmtgc"]
+[ext_resource type="Texture2D" uid="uid://d1qbdekf6in7b" path="res://Cats/SLAP-2.png" id="15_myvpb"]
+[ext_resource type="Texture2D" uid="uid://cgsy31ht8tw0g" path="res://Cats/SLAP-3.png" id="16_4vg81"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_567ui"]
 animations = [{
@@ -43,6 +46,31 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_rpsmo")
+}],
+"loop": true,
+"name": &"happy_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_rpsmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4ifc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xv5k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5q4as")
+}],
+"loop": true,
+"name": &"happy_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("6_b26tw")
 }],
 "loop": true,
@@ -68,29 +96,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ebj4n")
+"texture": ExtResource("14_jmtgc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_iu6o3")
+"texture": ExtResource("15_myvpb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_6tyrl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_3t188")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_6tyrl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_iu6o3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ebj4n")
+"texture": ExtResource("16_4vg81")
 }],
 "loop": false,
 "name": &"slap",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_32s5f"]
@@ -109,8 +125,10 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 sorting_offset = 1.0
+shaded = true
+alpha_cut = 2
 sprite_frames = SubResource("SpriteFrames_567ui")
-animation = &"neutral_idle"
+animation = &"happy_idle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.115144, -0.279115, 0)
