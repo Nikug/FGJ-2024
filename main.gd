@@ -17,7 +17,7 @@ func _ready():
 		else:
 			spawnPoint.y -= 1
 
-		_spawn_player(spawnPoint, playerId)
+		_spawn_player(spawnPoint, playerId, i == 1)
 		add_happy_meter(Vector2(100 * i, 0), playerId)
 		i += 1
 	
@@ -28,11 +28,16 @@ func _process(delta):
 	pass
 		
 
-func _spawn_player(pos: Vector3, id):
+func _spawn_player(pos: Vector3, id, tint: bool):
 	var instance = player.instantiate()
 	instance.position = pos
 	instance.position.z += 1
 	instance.player_id = id
+	var sprite = instance.get_node("AnimatedSprite2D")
+	print(sprite)
+	if (tint):
+		print("tint")
+		sprite.modulate = Color(255, 50, 255, 1)
 	add_child(instance)
 
 func add_happy_meter(pos: Vector2, key: String):

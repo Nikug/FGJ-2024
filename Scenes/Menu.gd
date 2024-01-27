@@ -11,11 +11,18 @@ extends Control
 @onready var player_label_2 = $player_avatar_2/player_label_2
 @onready var audio_join_1 = $audio_join_1
 @onready var audio_join_2 = $audio_join_2
+@onready var avatar_1 = $MarginContainer/player_avatar_1/avatar_1
+@onready var avatar_2 = $player_avatar_2/avatar_2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	s_t_ar_tg_am_e.button_down.connect(on_start_button_down)
 	exi_tb_u_tt_on.button_down.connect(on_exit_button_down)
+	
+	avatar_1.modulate = Color(1, 1, 1, 0.2)
+	#player_label_1.text = ""
+	avatar_2.modulate = Color(255, 50, 255, 0.2)
+	#player_label_2.text = ""
 
 func on_start_button_down() -> void:
 	get_tree().change_scene_to_packed(start_level)
@@ -72,14 +79,14 @@ func _form_player_label(inputMethod: String, deviceNumber: String):
 	
 
 func _player_joined(inputMethod: String, deviceNumber: String):
-	if not player_avatar_1.visible:
-		player_avatar_1.visible = true
+	if $"/root/Gamestate".get_playercount() == 1:
+		avatar_1.visible = true
+		avatar_1.modulate = Color(1, 1, 1, 1)
 		audio_join_1.play()
-			
 		player_label_1.text = _form_player_label(inputMethod, deviceNumber)
-	elif not player_avatar_2.visible:
-		player_avatar_2.visible = true
+	elif $"/root/Gamestate".get_playercount() == 2:
+		avatar_2.visible = true
+		avatar_2.modulate = Color(255, 50, 255, 1)
 		audio_join_2.play()
-		
 		player_label_2.text = _form_player_label(inputMethod, deviceNumber)
 	
