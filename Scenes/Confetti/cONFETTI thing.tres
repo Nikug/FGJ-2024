@@ -1,0 +1,27 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=4 format=3 uid="uid://cpq3v5e81c7rt"]
+
+[ext_resource type="Curve" uid="uid://di2smwxx7m1sp" path="res://Scenes/Confetti/new_curve.tres" id="1_d1t01"]
+[ext_resource type="Texture2D" uid="uid://d2nphsjx62cbc" path="res://Scenes/Confetti/cONFETTI.tres" id="2_uclhm"]
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_eavqk"]
+curve_x = ExtResource("1_d1t01")
+curve_y = ExtResource("1_d1t01")
+curve_z = ExtResource("1_d1t01")
+
+[resource]
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angular_velocity_max = 360.0
+directional_velocity_min = 1.0
+directional_velocity_max = 1.0
+directional_velocity_curve = SubResource("CurveXYZTexture_eavqk")
+orbit_velocity_max = 0.019
+orbit_velocity_curve = ExtResource("2_uclhm")
+radial_velocity_min = 1.0
+radial_velocity_max = 15.0
+gravity = Vector3(0, 0, 0)
+turbulence_enabled = true
+turbulence_noise_strength = 5.5
