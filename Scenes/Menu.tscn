@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvuux8hnoeuwv"]
+[gd_scene load_steps=13 format=3 uid="uid://cvuux8hnoeuwv"]
 
 [ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_ffq2e"]
 [ext_resource type="Texture2D" uid="uid://bdwksvddbgyhh" path="res://Art/cats-ai-bg.jpg" id="2_wjglr"]
 [ext_resource type="Theme" uid="uid://bi41fyh7o6ods" path="res://UI/base_theme.tres" id="3_nkbuk"]
 [ext_resource type="Texture2D" uid="uid://s20smk11whus" path="res://assets/cat_faces/UNHAPPY.png" id="4_kmnyy"]
-[ext_resource type="AudioStream" uid="uid://blv7li2belh6f" path="res://SFX/join.wav" id="6_1v388"]
-[ext_resource type="AudioStream" uid="uid://marv38p3xgxi" path="res://SFX/join2.wav" id="7_w2qmp"]
+[ext_resource type="AudioStream" uid="uid://jlw3refiodom" path="res://SFX/join.wav" id="6_1v388"]
+[ext_resource type="Texture2D" uid="uid://byy16yt26vtvn" path="res://assets/cat_faces/jussi.PNG" id="7_v8yue"]
+[ext_resource type="AudioStream" uid="uid://bef3x2i06pp4h" path="res://SFX/join2.wav" id="7_w2qmp"]
+[ext_resource type="Texture2D" uid="uid://bej70lmhcqmop" path="res://assets/cat_faces/alex.PNG" id="8_on6ve"]
+[ext_resource type="Texture2D" uid="uid://dquitn5aykrxj" path="res://assets/cat_faces/pekka.PNG" id="9_ojm5b"]
 
 [sub_resource type="SystemFont" id="SystemFont_t5035"]
 
@@ -182,3 +185,21 @@ volume_db = 9.21
 [node name="audio_join_2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_w2qmp")
 volume_db = 9.34
+
+[node name="alt_1" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_v8yue")
+
+[node name="alt_2" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_on6ve")
+
+[node name="alt_3" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_ojm5b")
