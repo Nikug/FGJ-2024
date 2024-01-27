@@ -5,6 +5,7 @@ extends Area3D
 var platform
 var collision_shape
 var list_of_platforms = []
+const max_platforms = 10
 
 
 func _ready():
@@ -18,6 +19,9 @@ func _ready():
 func _physics_process(_delta):
 	if not has_overlapping_bodies():
 		_create_platform()
+		if list_of_platforms.size() > max_platforms:
+			var kill_this = list_of_platforms.pop_front()
+			kill_this.queue_free()
 
 
 func _create_platform():
