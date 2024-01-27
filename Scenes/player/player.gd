@@ -3,24 +3,32 @@ extends CharacterBody3D
 @export var speed = 2.0
 @export var gravity = -1.0
 @export var player_id = "1"
-@onready var audio_player = $AudioStreamPlayer3D
+@onready var slap_player = $AudioStreamPlayer3D
+@onready var walk_player = $AudioStreamPlayer3D
 
 var _animated_sprite
 var target_velocity = Vector3.ZERO
 var is_slapping_hard = false
 var slap_sounds = []
+var walk_sounds = []
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_animated_sprite = $AnimatedSprite2D
 	_animated_sprite.animation_finished.connect(_dont_slap)
+
 	slap_sounds = [
 		preload("res://SFX/bonk.wav"),
 		preload("res://SFX/slap.wav"),
 		preload("res://SFX/slap2.wav"),
 		preload("res://SFX/slap3.wav"),
 		preload("res://SFX/slap4.wav"),
+	]
+
+	walk_sounds = [
+		preload("res://SFX/walk.wav"),
+		preload("res://SFX/walk2.wav"),
 	]
 
 
@@ -45,11 +53,14 @@ func _physics_process(delta):
 		direction = direction.normalized()
 		if direction.x < 0:
 			_animated_sprite.play(_get_animation("angry", "idle"))
+			walk_player.stop()
 		else:
 			_animated_sprite.play(_get_animation("angry", "walk"), 2)
+			_play_run()
 	else:
 		if not is_slapping_hard:
 			_animated_sprite.play(_get_animation("angry", "walk"))
+			_play_walk()
 
 	target_velocity.x = direction.x * speed
 	target_velocity.y = direction.y * speed
@@ -83,5 +94,17 @@ func _get_animation(mood, action):
 
 func _play_slap_sound():
 	var random_sound = slap_sounds[randi_range(0, slap_sounds.size() - 1)]
-	audio_player.stream = random_sound
-	audio_player.play()
+	slap_player.stream = random_sound
+	slap_player.play()
+
+
+func _play_run():
+	if walk_player.stream != walk_sounds[0] or not walk_player.playing:
+		walk_player.stream = walk_sounds[0]
+		walk_player.play()
+
+
+func _play_walk():
+	if walk_player.stream != walk_sounds[1] or not walk_player.playing:
+		walk_player.stream = walk_sounds[1]
+		walk_player.play()
