@@ -80,6 +80,7 @@ func _physics_process(delta):
 		if collision.get_collider().is_in_group("item") && is_slapping_hard:
 			var item = collision.get_collider()
 			item.get_slapped()
+			score_manager.increment_happiness(player_id)
 			break
 
 
