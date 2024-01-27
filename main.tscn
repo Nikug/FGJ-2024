@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://day5aamg1cc62"]
+[gd_scene load_steps=5 format=3 uid="uid://c8a33mrirgi1"]
 
 [ext_resource type="PackedScene" uid="uid://cy2c6b67uq4c6" path="res://Scenes/PlatformSpawner/PlatformSpawner.tscn" id="1_jw306"]
 
