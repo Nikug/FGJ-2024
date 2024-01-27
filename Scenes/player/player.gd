@@ -17,6 +17,7 @@ var slap_sounds = []
 var walk_sounds = []
 var mood = "angry"
 var confetti
+var blood
 
 
 # Called when the node enters the scene tree for the first time.
@@ -38,6 +39,7 @@ func _ready():
 	]
 
 	confetti = preload("res://Scenes/Confetti/cONFETTI.tscn")
+	blood = preload("res://Scenes/Confetti/bLOOD.tscn")
 
 
 func _process(_delta):
@@ -156,6 +158,11 @@ func _check_mood():
 
 func _DIE():
 	print("DEATH")
+
+	var instance = blood.instantiate()
+	instance.position = position
+	add_child(instance)
+
 	score_manager.decrement_happiness(player_id)
 	position = Vector3(0, 0, 0.5)
 	target_velocity.z = 0

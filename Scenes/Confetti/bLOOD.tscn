@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://dgyecqai5als"]
+
+[ext_resource type="Script" path="res://Scenes/Confetti/cONFETTI.gd" id="2_hmksw"]
+
+[sub_resource type="Curve" id="Curve_3bu56"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.540084, 0.0536968), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.130212, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_03tg2"]
+curve = SubResource("Curve_3bu56")
+
+[sub_resource type="Curve" id="Curve_3d7ey"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.876231, 0.955443), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_2kg23"]
+curve = SubResource("Curve_3d7ey")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lbfw1"]
+angle_max = 360.0
+spread = 180.0
+radial_velocity_max = 5.0
+radial_velocity_curve = SubResource("CurveTexture_03tg2")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_2kg23")
+color = Color(0.882353, 0.219608, 0, 1)
+hue_variation_min = -0.01
+hue_variation_max = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uevfl"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_l61c0"]
+material = SubResource("StandardMaterial3D_uevfl")
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+emitting = false
+amount = 25
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+fract_delta = false
+process_material = SubResource("ParticleProcessMaterial_lbfw1")
+draw_pass_1 = SubResource("QuadMesh_l61c0")
+script = ExtResource("2_hmksw")
