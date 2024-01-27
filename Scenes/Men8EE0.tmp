@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cvuux8hnoeuwv"]
 
 [ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_ffq2e"]
-[ext_resource type="Texture2D" uid="uid://bdwksvddbgyhh" path="res://Art/cats-ai-bg.jpg" id="2_wjglr"]
+[ext_resource type="Texture2D" uid="uid://csc7ooog027ws" path="res://assets/placeholder_menu_background.png" id="1_kgq13"]
 [ext_resource type="Theme" uid="uid://bi41fyh7o6ods" path="res://UI/base_theme.tres" id="3_nkbuk"]
 [ext_resource type="Texture2D" uid="uid://s20smk11whus" path="res://assets/cat_faces/UNHAPPY.png" id="4_kmnyy"]
 [ext_resource type="AudioStream" uid="uid://blv7li2belh6f" path="res://SFX/join.wav" id="6_1v388"]
@@ -35,17 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_wjglr")
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color(100, 100, 100, 0.392157)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_wjglr")
+texture = ExtResource("1_kgq13")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -71,7 +61,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.580392, 0.219608, 1)
 theme_override_colors/font_outline_color = Color(0.697962, 0.203969, 3.85046e-07, 1)
-theme_override_constants/outline_size = 16
+theme_override_constants/outline_size = 11
 theme_override_fonts/font = SubResource("FontVariation_k712x")
 theme_override_font_sizes/font_size = 64
 text = "MAKE MEOW LAUGH"
@@ -99,7 +89,6 @@ layout_mode = 2
 theme = ExtResource("3_nkbuk")
 theme_override_fonts/font = SubResource("SystemFont_irb7x")
 theme_override_font_sizes/font_size = 30
-disabled = true
 text = "START"
 
 [node name="Separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -119,7 +108,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_nkbuk")
-theme_override_constants/outline_size = 16
+theme_override_constants/outline_size = 11
 theme_override_fonts/font = SubResource("FontVariation_k712x")
 text = "Press Enter to join
 Press (A) to join"
@@ -142,7 +131,6 @@ stretch_mode = 4
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_nkbuk")
-theme_override_constants/outline_size = 16
 text = "Join"
 
 [node name="player_avatar_2" type="VBoxContainer" parent="."]
@@ -172,7 +160,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme = ExtResource("3_nkbuk")
-theme_override_constants/outline_size = 16
 text = "Join"
 
 [node name="audio_join_1" type="AudioStreamPlayer" parent="."]

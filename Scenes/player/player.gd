@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal death
+
 @export var speed = 2.0
 @export var gravity = -1.0
 @export var player_id = "1"
@@ -82,6 +84,9 @@ func _physics_process(delta):
 			item.get_slapped()
 			score_manager.increment_happiness(player_id)
 			break
+		if collision.get_collider().is_in_group("killzone"):
+			_DIE()
+			break
 
 
 func _slap():
@@ -118,3 +123,9 @@ func _play_walk():
 
 func _check_mood():
 	mood = score_manager.get_mood(player_id)
+
+func _DIE():
+	print("DEATH")
+	death.emit()
+	position = Vector3(0, 0, 0.5)
+	target_velocity.z = 0
