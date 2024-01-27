@@ -12,3 +12,8 @@ eSinE = ExtResource("2_3k23i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_fd26m")
+
+[node name="DifficultyTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="DifficultyTimer" to="." method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://do2tbdnpno1a"]
+[gd_scene load_steps=10 format=3 uid="uid://do2tbdnpno1a"]
 
 [ext_resource type="Script" path="res://Scenes/cat-happiness/cat-happiness.gd" id="1_es1dt"]
 [ext_resource type="Texture2D" uid="uid://s20smk11whus" path="res://assets/cat_faces/UNHAPPY.png" id="2_aeagy"]
@@ -7,6 +7,28 @@
 [ext_resource type="Texture2D" uid="uid://rytl6svs0x66" path="res://Scenes/cat-happiness/over-texture-3.png" id="5_rb8bl"]
 [ext_resource type="Texture2D" uid="uid://d0rt7h3kfjiqm" path="res://Scenes/cat-happiness/fill-texture-3.png" id="6_ffjhs"]
 [ext_resource type="Texture2D" uid="uid://b5lr26pbxmuip" path="res://Scenes/cat-happiness/cat-border-2.png" id="7_np1se"]
+
+[sub_resource type="Animation" id="Animation_egkuk"]
+resource_name = "pulse"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cat-pic:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dmfny"]
+_data = {
+"pulse": SubResource("Animation_egkuk")
+}
 
 [node name="CatHappinessUIPanel" type="Control"]
 layout_mode = 3
@@ -26,9 +48,16 @@ offset_left = 28.335
 offset_top = 139.795
 offset_right = 135.335
 offset_bottom = 244.795
+pivot_offset = Vector2(62, 98)
 texture = ExtResource("2_aeagy")
 expand_mode = 1
 script = ExtResource("3_iqhqs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cat-pic"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_dmfny")
+}
 
 [node name="HappinessBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
