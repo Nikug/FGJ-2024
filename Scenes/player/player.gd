@@ -17,6 +17,7 @@ var just_hopped = false
 var just_slapped = false
 var slap_sounds = []
 var walk_sounds = []
+var hop_sounds = []
 var mood = "angry"
 var confetti
 var blood
@@ -48,6 +49,11 @@ func _ready():
 	walk_sounds = [
 		preload("res://SFX/walk.wav"),
 		preload("res://SFX/walk2.wav"),
+	]
+
+	hop_sounds = [
+		preload("res://SFX/hop.wav"),
+		preload("res://SFX/hop2.wav"),
 	]
 
 	confetti = preload("res://Scenes/Confetti/cONFETTI.tscn")
@@ -188,3 +194,5 @@ func _hop():
 	just_hopped = true
 	target_velocity.z = hop_power
 	_animated_sprite.play(a("hop"))
+	slap_player.stream = hop_sounds[randi_range(0, 1)]
+	slap_player.play()
