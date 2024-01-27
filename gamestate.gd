@@ -6,7 +6,7 @@ var happinessIncrementDefault: int = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	add_player("p1")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -52,3 +52,6 @@ func decrement_happiness(playerName: String, amount: int = happinessIncrementDef
 # Get all players
 func get_all_players() -> Dictionary:
 	return players
+	
+func get_playercount():
+	return players.size()

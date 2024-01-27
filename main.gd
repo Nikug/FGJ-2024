@@ -5,7 +5,8 @@ var player
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = preload("res://Scenes/player/player.tscn")
-	_spawn_player(Vector3.ZERO)
+	for n in $"/root/Gamestate".get_playercount():
+		_spawn_player(Vector3.ZERO)
 	
 
 
