@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bru13edxlte41"]
+[gd_scene load_steps=61 format=3 uid="uid://bru13edxlte41"]
 
 [ext_resource type="Script" path="res://Scenes/player/player.gd" id="1_xuaj4"]
 [ext_resource type="Texture2D" uid="uid://ut4avnyhfvx3" path="res://Cats/NH-1.png" id="2_1gega"]
@@ -17,24 +17,34 @@
 [ext_resource type="Texture2D" uid="uid://bxadbjgpj71l6" path="res://Cats/NH-4.png" id="9_cojjd"]
 [ext_resource type="Texture2D" uid="uid://dfxfnp106d8he" path="res://Cats/NH-4-GREY.png" id="9_g22d2"]
 [ext_resource type="Texture2D" uid="uid://xq7qhxgac5rt" path="res://Cats/N-4.png" id="9_q22u0"]
+[ext_resource type="Texture2D" uid="uid://om0pp3k4hhnc" path="res://Cats/FALL-1.png" id="10_1d2rd"]
 [ext_resource type="Texture2D" uid="uid://c31yxgvh1f0w0" path="res://Cats/JUMP-1.png" id="10_v3gt1"]
 [ext_resource type="Texture2D" uid="uid://4bt4iostfgv8" path="res://Cats/JUMP-2.png" id="11_benyh"]
+[ext_resource type="Texture2D" uid="uid://dk0lp0468caoe" path="res://Cats/FALL-2.png" id="11_bkkr4"]
 [ext_resource type="Texture2D" uid="uid://qs7g8x3li0dm" path="res://Cats/FALL-1-GREY.png" id="11_p1jum"]
 [ext_resource type="Texture2D" uid="uid://dicx2o2jxfqhh" path="res://Cats/H-1-GREY.png" id="12_3vwvp"]
 [ext_resource type="Texture2D" uid="uid://bwm36hqpws2f4" path="res://Cats/JUMP-3.png" id="12_058mq"]
 [ext_resource type="Texture2D" uid="uid://boa5ofjlvkjf7" path="res://Cats/FALL-2-GREY.png" id="12_ht1ax"]
+[ext_resource type="Texture2D" uid="uid://dggxoissjsvd0" path="res://Cats/FALL-3.png" id="12_ob1na"]
 [ext_resource type="Texture2D" uid="uid://bc0u43hkpglg8" path="res://Cats/FALL-3-GREY.png" id="13_bgx2t"]
+[ext_resource type="Texture2D" uid="uid://bdwqeckug7wtn" path="res://Cats/FALL-4.png" id="13_qfmku"]
+[ext_resource type="Texture2D" uid="uid://d2fnio3tfvdt4" path="res://Cats/FALL-5.png" id="14_0bgi0"]
 [ext_resource type="Texture2D" uid="uid://f3l0bsikhj44" path="res://Cats/SLAP-1.png" id="14_jmtgc"]
 [ext_resource type="Texture2D" uid="uid://b8ojgb10msxb4" path="res://Cats/FALL-4-GREY.png" id="14_ucx0u"]
+[ext_resource type="Texture2D" uid="uid://cn0q77wwf3ogi" path="res://Cats/FALL-6.png" id="15_4s3oq"]
 [ext_resource type="Texture2D" uid="uid://c1kh2tl4eq6u1" path="res://Cats/FALL-5-GREY.png" id="15_ftfwj"]
 [ext_resource type="Texture2D" uid="uid://d1qbdekf6in7b" path="res://Cats/SLAP-2.png" id="15_myvpb"]
 [ext_resource type="Texture2D" uid="uid://c2jxry4w6qryg" path="res://Cats/H-2-GREY.png" id="16_3a2pk"]
 [ext_resource type="Texture2D" uid="uid://cgsy31ht8tw0g" path="res://Cats/SLAP-3.png" id="16_4vg81"]
+[ext_resource type="Texture2D" uid="uid://cbnn4737sg5j7" path="res://Cats/FALL-7.png" id="16_dgux1"]
 [ext_resource type="Texture2D" uid="uid://buocyb2vlkrp" path="res://Cats/FALL-6-GREY.png" id="16_lvo7v"]
 [ext_resource type="Texture2D" uid="uid://b8bdk7js06nq3" path="res://Cats/FALL-7-GREY.png" id="17_rhwmw"]
 [ext_resource type="Texture2D" uid="uid://benpaone48dox" path="res://Cats/H-3-GREY.png" id="17_thk48"]
+[ext_resource type="Texture2D" uid="uid://ba5sqhiybhhup" path="res://Cats/FALL-8.png" id="17_x7bxt"]
+[ext_resource type="Texture2D" uid="uid://c84n8dfxlp72g" path="res://Cats/FALL-9.png" id="18_80n0u"]
 [ext_resource type="Texture2D" uid="uid://d3sj4ylmpe51r" path="res://Cats/H-4-GREY.png" id="18_b3vpe"]
 [ext_resource type="Texture2D" uid="uid://btcg8k6mq0gmh" path="res://Cats/FALL-8-GREY.png" id="18_o8brh"]
+[ext_resource type="Texture2D" uid="uid://cf5ofkul1qco3" path="res://Cats/FALL-10.png" id="19_h6yhw"]
 [ext_resource type="Texture2D" uid="uid://cov458h12q0r" path="res://Cats/FALL-9-GREY.png" id="19_n27qv"]
 [ext_resource type="Texture2D" uid="uid://6jmgfpajksye" path="res://Cats/FALL-10-GREY.png" id="20_huqjr"]
 [ext_resource type="Texture2D" uid="uid://da0x2ggkjbs6n" path="res://Cats/N-1-GREY.png" id="22_3ch78"]
@@ -103,11 +113,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_058mq")
+"texture": ExtResource("10_1d2rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bkkr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ob1na")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qfmku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0bgi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4s3oq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_dgux1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_x7bxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_80n0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_h6yhw")
 }],
 "loop": true,
 "name": &"fall",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -142,7 +179,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall_gray",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -203,6 +240,22 @@ animations = [{
 }],
 "loop": false,
 "name": &"hop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_058mq")
+}],
+"loop": true,
+"name": &"hop_fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_8otnu")
+}],
+"loop": true,
+"name": &"hop_fall_gray",
 "speed": 5.0
 }, {
 "frames": [{
@@ -296,9 +349,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("48_5pj7s")
 }],
-"loop": true,
+"loop": false,
 "name": &"slap_gray",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_32s5f"]
@@ -320,7 +373,7 @@ sorting_offset = 1.0
 shaded = true
 alpha_cut = 2
 sprite_frames = SubResource("SpriteFrames_567ui")
-animation = &"slap_gray"
+animation = &"angry_idle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.115144, -0.279115, 0)

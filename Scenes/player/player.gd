@@ -31,6 +31,7 @@ func a(animation: String):
 func _ready():
 	_animated_sprite = $AnimatedSprite2D
 	_animated_sprite.animation_finished.connect(_dont_slap)
+	_animated_sprite.play(_get_animation(a("fall")))
 
 	slap_sounds = [
 		preload("res://SFX/bonk.wav"),
@@ -80,7 +81,7 @@ func _physics_process(delta):
 		if Input.is_action_pressed("move_up_%s" % [player_id]):
 			direction.y += 1
 
-	if not is_hopping_in_your_hood and not is_slapping_hard:
+	if not is_hopping_in_your_hood and not is_slapping_hard and is_on_wall():
 		if direction != Vector3.ZERO:
 			direction = direction.normalized()
 			if direction.x < 0:
@@ -101,8 +102,11 @@ func _physics_process(delta):
 
 	if !is_on_wall():
 		target_velocity.z += delta * gravity
-		if target_velocity.z < 0.0:
-			_animated_sprite.play(a("fall"))
+		if target_velocity.z < 1.0:
+			if position.z < 0.0:
+				_animated_sprite.play(a("fall"))
+			else:
+				_animated_sprite.play(a("hop_fall"))
 
 	velocity = target_velocity
 	move_and_slide()
