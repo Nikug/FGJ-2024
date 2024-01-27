@@ -71,6 +71,7 @@ func get_slapped():
 	slapped.emit()
 	hela -= 1
 	if hela == 0:
+		$CollisionShape3D.disabled = true
 		movement_velocity = Vector3(randi_range(slapMin, slapMax), randi_range(slapMin, slapMax), randi_range(slapMin, slapMax))
 
 

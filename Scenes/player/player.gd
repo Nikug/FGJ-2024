@@ -6,7 +6,7 @@ extends CharacterBody3D
 @export var player_id = "1"
 @export var is_gray = false
 @onready var slap_player = $AudioStreamPlayer3D
-@onready var walk_player = $AudioStreamPlayer3D
+@onready var walk_player = $WalkPlayer
 @onready var score_manager = $"/root/Gamestate"
 
 var _animated_sprite
@@ -17,6 +17,7 @@ var just_hopped = false
 var just_slapped = false
 var slap_sounds = []
 var walk_sounds = []
+var hop_sounds = []
 var mood = "angry"
 var confetti
 var blood
@@ -35,7 +36,7 @@ func a(animation: String):
 func _ready():
 	_animated_sprite = $AnimatedSprite2D
 	_animated_sprite.animation_finished.connect(_dont_slap)
-	_animated_sprite.play(_get_animation(a("fall")))
+	_animated_sprite.play("fall")
 
 	slap_sounds = [
 		preload("res://SFX/bonk.wav"),
@@ -48,6 +49,11 @@ func _ready():
 	walk_sounds = [
 		preload("res://SFX/walk.wav"),
 		preload("res://SFX/walk2.wav"),
+	]
+
+	hop_sounds = [
+		preload("res://SFX/hop.wav"),
+		preload("res://SFX/hop2.wav"),
 	]
 
 	confetti = preload("res://Scenes/Confetti/cONFETTI.tscn")
@@ -64,11 +70,26 @@ func _process(_delta):
 		and is_on_wall()
 	):
 		_hop()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+
+		if collision.get_collider().is_in_group("item"):
+			if just_slapped && is_slapping_hard:
+				just_slapped = false
+				var item = collision.get_collider()
+				item.get_slapped()
+				score_manager.increment_happiness(player_id)
+				break
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	_check_mood()
+
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider().is_in_group("killzone"):
+			_DIE()
 
 	if is_on_wall() and not just_hopped:
 		is_hopping_in_your_hood = false
@@ -106,6 +127,7 @@ func _physics_process(delta):
 		just_hopped = false
 
 	if !is_on_wall():
+		walk_player.stop()
 		target_velocity.z += delta * gravity
 		if target_velocity.z < 0.0:
 			if position.z < 0.0:
@@ -115,19 +137,6 @@ func _physics_process(delta):
 
 	velocity = target_velocity
 	move_and_slide()
-
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-
-		if collision.get_collider().is_in_group("item") && just_slapped && is_slapping_hard:
-			just_slapped = false
-			var item = collision.get_collider()
-			item.get_slapped()
-			score_manager.increment_happiness(player_id)
-			break
-		if collision.get_collider().is_in_group("killzone"):
-			_DIE()
-			break
 
 
 func _slap():
@@ -187,3 +196,5 @@ func _hop():
 	just_hopped = true
 	target_velocity.z = hop_power
 	_animated_sprite.play(a("hop"))
+	slap_player.stream = hop_sounds[randi_range(0, 1)]
+	slap_player.play()
