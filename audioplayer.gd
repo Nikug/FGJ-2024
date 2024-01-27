@@ -6,6 +6,7 @@ var level1Music : AudioStream = preload("res://music/drive-breakbeat-173062.mp3"
 
 func _ready():
 	stream = menuMusic
+	volume_db = -10
 	play()
 
 # Supported musics: "menu", "level-1"

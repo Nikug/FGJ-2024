@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+signal slapped
 
 @export var movement_velocity = Vector3.ZERO
 @export var speed = 750
@@ -11,9 +12,6 @@ func _physics_process(_delta):
 	velocity = movement_velocity
 	move_and_slide()
 
-
-func _on_bullet_body_entered(body):
-	print("collidaa")
-	if body.is_in_group("mobs"):
-		body.queue_free()
+func get_slapped():
+	slapped.emit()
 	queue_free()
