@@ -11,6 +11,7 @@ var target_velocity = Vector3.ZERO
 func _ready():
 	pass
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	var direction = Vector3.ZERO  # The player's movement vector.
@@ -27,10 +28,13 @@ func _physics_process(delta):
 
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
-		_animated_sprite.play("walk")
+		if direction.x < 0:
+			_animated_sprite.play(_get_animation("angry", "idle"))
+		else:
+			_animated_sprite.play(_get_animation("angry", "walk"), 2)
 	else:
 		if _animated_sprite.animation != "slap":
-			_animated_sprite.play("idle")
+			_animated_sprite.play(_get_animation("angry", "walk"))
 
 	target_velocity.x = direction.x * speed
 	target_velocity.y = direction.y * speed
@@ -42,3 +46,7 @@ func _physics_process(delta):
 
 func _slap():
 	_animated_sprite.play("slap")
+
+
+func _get_animation(mood, action):
+	return mood + "_" + action

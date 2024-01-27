@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ef3cg2k4a8vh"
-path.s3tc="res://.godot/imported/enemyFlyingAlt_1.png-af12deb7cf8e0e6df4505d414e8e24c5.s3tc.ctex"
+uid="uid://co8runigs2nmx"
+path.s3tc="res://.godot/imported/N-3.png-e53876f11e402808a20dedc947730856.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/player/enemyFlyingAlt_1.png"
-dest_files=["res://.godot/imported/enemyFlyingAlt_1.png-af12deb7cf8e0e6df4505d414e8e24c5.s3tc.ctex"]
+source_file="res://Cats/N-3.png"
+dest_files=["res://.godot/imported/N-3.png-e53876f11e402808a20dedc947730856.s3tc.ctex"]
 
 [params]
 
