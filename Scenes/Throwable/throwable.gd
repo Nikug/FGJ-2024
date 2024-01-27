@@ -26,13 +26,23 @@ var fISHbOwl ={
 	preload("res://assets/Slappables/FISHBOWL-5.png"),
 	h = 3,
 	w = 2,
-	a = true
+	a = true,
+	an = "fisu"
+	}
+var lavaLamBbu ={
+	texture=
+	preload("res://assets/Slappables/FISHBOWL-5.png"),
+	h = 3,
+	w = 2,
+	a = true,
+	an = "lavalambbu"
 	}
 
 func _ready():
-	var assets = [GLass, reMOte, fISHbOwl]
+	var assets = [GLass, reMOte, fISHbOwl, lavaLamBbu]
 	var name =  assets[randi() % assets.size()]
 	if name.a:
+		$Animation.animation = name.an
 		$Animation.play()
 		var current_animation : String = $Animation.animation
 		var sprite_texture : Texture = $Animation.sprite_frames.get_frame_texture(current_animation, 0)
