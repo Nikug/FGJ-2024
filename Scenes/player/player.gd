@@ -2,17 +2,26 @@ extends CharacterBody3D
 
 @export var speed = 2.0
 @export var gravity = -1.0
+@export var player_id = "1"
+@onready var audio_player = $AudioStreamPlayer3D
+
 var _animated_sprite
 var target_velocity = Vector3.ZERO
-@export var player_id = "1"
-
 var is_slapping_hard = false
+var slap_sounds = []
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_animated_sprite = $AnimatedSprite2D
 	_animated_sprite.animation_finished.connect(_dont_slap)
+	slap_sounds = [
+		preload("res://SFX/bonk.wav"),
+		preload("res://SFX/slap.wav"),
+		preload("res://SFX/slap2.wav"),
+		preload("res://SFX/slap3.wav"),
+		preload("res://SFX/slap4.wav"),
+	]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -62,8 +71,8 @@ func _physics_process(delta):
 
 func _slap():
 	is_slapping_hard = true
-	# play sound
 	_animated_sprite.play("slap")
+	_play_slap_sound()
 
 
 func _dont_slap():
@@ -72,3 +81,9 @@ func _dont_slap():
 
 func _get_animation(mood, action):
 	return mood + "_" + action
+
+
+func _play_slap_sound():
+	var random_sound = slap_sounds[randi_range(0, slap_sounds.size() - 1)]
+	audio_player.stream = random_sound
+	audio_player.play()

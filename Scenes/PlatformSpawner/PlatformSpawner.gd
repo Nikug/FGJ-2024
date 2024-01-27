@@ -24,15 +24,15 @@ func _physics_process(_delta):
 			var kill_this = list_of_platforms.pop_front()
 			kill_this.queue_free()
 
+func _position_eSinE(p, e):
+	var size = p.get_node("CollisionShape3D").get_shape().size
+	e.position.x = randi() % int(size.x) - size.x / 2
+	e.position.y = randi() % int(size.y) - size.y / 2
 
 func _create_eSinE(instance):
 	var i = eSinE.instantiate()
-	add_child(i)
-	i.position.x = instance.position.x
-	i.position.y = instance.position.y + 1
-	i.movement_velocity = Vector3.LEFT * platform_speed
-	print(i.position.y)
-	print(instance.position.y)
+	instance.add_child(i)
+	_position_eSinE(instance, i)
 
 
 func _create_platform():
@@ -56,7 +56,7 @@ func _create_platform():
 	instance.movement_velocity = Vector3.LEFT * platform_speed
 	list_of_platforms.append(instance)
 	var randomi = randi() % 100
-	if randomi < 30:
+	if randomi < 80:
 		_create_eSinE(instance)
 	add_child(instance)
 
