@@ -119,6 +119,7 @@ func _physics_process(delta):
 		just_hopped = false
 
 	if !is_on_wall():
+		walk_player.stop()
 		target_velocity.z += delta * gravity
 		if target_velocity.z < 0.0:
 			if position.z < 0.0:
@@ -128,7 +129,6 @@ func _physics_process(delta):
 
 	velocity = target_velocity
 	move_and_slide()
-
 
 
 func _slap():
