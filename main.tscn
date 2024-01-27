@@ -34,6 +34,6 @@ size = 10.0
 [node name="PlatformSpawner" parent="." instance=ExtResource("1_jw306")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 
-[node name="Platform" parent="." instance=ExtResource("2_ltv1y")]
+[node name="Starting_platForm" parent="." instance=ExtResource("2_ltv1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32572, 0, 0)
 movement_velocity = Vector3(-2, 0, 0)
