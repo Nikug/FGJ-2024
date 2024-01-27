@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://do2tbdnpno1a"]
+[gd_scene load_steps=8 format=3 uid="uid://do2tbdnpno1a"]
 
 [ext_resource type="Script" path="res://Scenes/cat-happiness/cat-happiness.gd" id="1_es1dt"]
 [ext_resource type="Texture2D" uid="uid://c00p587j8ox75" path="res://Scenes/cat-happiness/ok-cat.jpg" id="2_vb600"]
 [ext_resource type="Script" path="res://Scenes/cat-happiness/Cat-pic.gd" id="3_iqhqs"]
-[ext_resource type="Script" path="res://Scenes/cat-happiness/HappinessBar.gd" id="4_w41ml"]
+[ext_resource type="Texture2D" uid="uid://cuo640lj7xcu8" path="res://Scenes/cat-happiness/under-texture-2.png" id="4_ovg0q"]
+[ext_resource type="Texture2D" uid="uid://cqiu70xwiglpr" path="res://Scenes/cat-happiness/fill-texture-2.png" id="5_eopgh"]
+[ext_resource type="Texture2D" uid="uid://bdql4vy6nb7h6" path="res://Scenes/cat-happiness/over-texture-2.png" id="5_v707s"]
+[ext_resource type="Texture2D" uid="uid://lxg3d73xuutj" path="res://Scenes/cat-happiness/cat-border.png" id="7_lkl6n"]
 
 [node name="CatHappinessUIPanel" type="Control"]
 layout_mode = 3
@@ -21,18 +24,29 @@ script = ExtResource("1_es1dt")
 [node name="Cat-pic" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 51.0
-offset_top = 97.0
-offset_right = 111.0
-offset_bottom = 175.0
+offset_top = 115.0
+offset_right = 103.0
+offset_bottom = 181.0
 texture = ExtResource("2_vb600")
 expand_mode = 1
 script = ExtResource("3_iqhqs")
 
-[node name="HappinessBar" type="ProgressBar" parent="."]
+[node name="HappinessBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 9.0
-offset_right = 128.0
-offset_bottom = 97.0
+offset_top = 11.0
+offset_right = 117.0
+offset_bottom = 114.0
+rounded = true
 fill_mode = 3
-script = ExtResource("4_w41ml")
+texture_under = ExtResource("4_ovg0q")
+texture_over = ExtResource("5_v707s")
+texture_progress = ExtResource("5_eopgh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 99.0
+offset_right = 127.0
+offset_bottom = 199.0
+texture = ExtResource("7_lkl6n")
