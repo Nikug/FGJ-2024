@@ -14,19 +14,22 @@ var target_velocity = Vector3.ZERO
 var is_slapping_hard = false
 var is_hopping_in_your_hood = false
 var just_hopped = false
+var just_slapped = false
 var slap_sounds = []
 var walk_sounds = []
 var mood = "angry"
 var confetti
 var blood
 
+
 func a(animation: String):
 	var postfix = ""
-	
+
 	if is_gray:
 		postfix = "_gray"
 
 	return animation + postfix
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -116,7 +119,8 @@ func _physics_process(delta):
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 
-		if collision.get_collider().is_in_group("item") && is_slapping_hard:
+		if collision.get_collider().is_in_group("item") && just_slapped && is_slapping_hard:
+			just_slapped = false
 			var item = collision.get_collider()
 			item.get_slapped()
 			score_manager.increment_happiness(player_id)
@@ -128,6 +132,7 @@ func _physics_process(delta):
 
 func _slap():
 	is_slapping_hard = true
+	just_slapped = true
 	_animated_sprite.play(a("slap"))
 	_play_slap_sound()
 	var instance = confetti.instantiate()
