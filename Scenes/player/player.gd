@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal death
+
 @export var speed = 2.0
 @export var gravity = -1.0
 @export var player_id = "1"
@@ -67,6 +69,9 @@ func _physics_process(delta):
 			var item = collision.get_collider()
 			item.get_slapped()
 			break
+		if collision.get_collider().is_in_group("killzone"):
+			_DIE()
+			break
 
 
 func _slap():
@@ -87,3 +92,10 @@ func _play_slap_sound():
 	var random_sound = slap_sounds[randi_range(0, slap_sounds.size() - 1)]
 	audio_player.stream = random_sound
 	audio_player.play()
+
+func _DIE():
+	print("DEATH")
+	death.emit()
+	position = Vector3.ZERO
+	
+	
