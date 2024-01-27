@@ -1,27 +1,12 @@
 extends Control
 
 var happyScore = 0
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	await get_tree().create_timer(1).timeout
-	happyScore += 20
-	
-	await get_tree().create_timer(1).timeout
-	happyScore += 20
-	
-	await get_tree().create_timer(1).timeout
-	happyScore += 20
-	
-	await get_tree().create_timer(1).timeout
-	happyScore += 20
-	
-	await get_tree().create_timer(1).timeout
-	happyScore += 20
-
+var player_id = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	happyScore = $"/root/Gamestate".get_happiness_score(player_id)
+	
 	if (happyScore <= 10):
 		$"Cat-pic".changeCat("grumpy")
 	elif (10 < happyScore && happyScore <= 50):

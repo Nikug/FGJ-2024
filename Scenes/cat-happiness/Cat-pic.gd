@@ -1,8 +1,8 @@
 extends TextureRect
 
-var grumpyCat = load("res://cat-happiness/grumpy-cat.webp")
-var coolCat = load("res://cat-happiness/ok-cat.jpg")
-var manicCat= load("res://cat-happiness/manic-cat.jpg")
+var grumpyCat = load("res://Scenes/cat-happiness/grumpy-cat.webp")
+var coolCat = load("res://Scenes/cat-happiness/ok-cat.jpg")
+var manicCat= load("res://Scenes/cat-happiness/manic-cat.jpg")
 
 
 # Cat type = "grumpy" | "cool" | "manic"
