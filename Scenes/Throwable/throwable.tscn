@@ -1,6 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb4x5hevwyu12"]
+
+[gd_scene load_steps=10 format=3 uid="uid://cb4x5hevwyu12"]
 
 [ext_resource type="Script" path="res://Scenes/Throwable/throwable.gd" id="2_co3ff"]
+[ext_resource type="Texture2D" uid="uid://n0lqjmvmg7mv" path="res://assets/Slappables/FISHBOWL-1.png" id="2_f288v"]
+[ext_resource type="Texture2D" uid="uid://cqaxsgnxbwxbf" path="res://assets/Slappables/FISHBOWL-2.png" id="3_jayo8"]
+[ext_resource type="Texture2D" uid="uid://bqu6jo81108sm" path="res://assets/Slappables/FISHBOWL-3.png" id="4_2yjd2"]
+[ext_resource type="Texture2D" uid="uid://cd1du5vuptend" path="res://assets/Slappables/FISHBOWL-4.png" id="5_mojgc"]
+[ext_resource type="Texture2D" uid="uid://chawhqo1f48cb" path="res://assets/Slappables/FISHBOWL-5.png" id="6_bexjd"]
+[ext_resource type="Texture2D" uid="uid://docbdh7xthgim" path="res://assets/Slappables/FISHBOWL-6.png" id="7_m8udx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s56hg"]
 
@@ -14,3 +21,10 @@ script = ExtResource("2_co3ff")
 shape = SubResource("BoxShape3D_s56hg")
 
 [node name="Sprite" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+
+[node name="Animation" type="AnimatedSprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+sprite_frames = SubResource("SpriteFrames_fj7p2")
