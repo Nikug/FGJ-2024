@@ -115,8 +115,7 @@ func _player_joined(inputMethod: String, deviceNumber: String):
 		player_label_1.text = $"/root/Gamestate".get_player(inputMethod + deviceNumber).displayName
 		if ($"/root/Gamestate".funModifier):
 			set_alt_avatar(0)
-			
-			
+
 	elif $"/root/Gamestate".get_playercount() == 2:
 		avatar_2.visible = true
 		avatar_2.material = ShaderMaterial.new()
@@ -126,7 +125,6 @@ func _player_joined(inputMethod: String, deviceNumber: String):
 		player_label_2.text = $"/root/Gamestate".get_player(inputMethod + deviceNumber).displayName
 		if ($"/root/Gamestate".funModifier):
 			set_alt_avatar(1)
-	
 
 func set_alt_avatar(playerIndex: int):
 	var players = $"/root/Gamestate".get_all_players()

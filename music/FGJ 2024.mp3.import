@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ciy12rsu7cyx6"
+path="res://.godot/imported/FGJ 2024.mp3-bf381e01e64548125a123bb0065af3ff.mp3str"
+
+[deps]
+
+source_file="res://music/FGJ 2024.mp3"
+dest_files=["res://.godot/imported/FGJ 2024.mp3-bf381e01e64548125a123bb0065af3ff.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
