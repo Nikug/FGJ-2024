@@ -68,6 +68,7 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func get_slapped():
+	$CollisionShape3D.disabled = true
 	slapped.emit()
 	hela -= 1
 	if hela == 0:
