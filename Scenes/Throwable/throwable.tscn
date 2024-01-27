@@ -4,8 +4,10 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s56hg"]
 
-[node name="Throwable" type="CharacterBody3D"]
+[node name="Throwable" type="CharacterBody3D" groups=["item"]]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("2_co3ff")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
