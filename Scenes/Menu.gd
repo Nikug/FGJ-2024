@@ -19,16 +19,9 @@ func on_exit_button_down() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("yoink_1"):
-		pass
-		# Add player to gmaState
-		#$gameState.
+	pass
 
 func _input(event: InputEvent):
-	print(event)
-	print(event.device)
-	print(event.is_action_pressed("yoink_1"))
-	
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			get_tree().quit()
@@ -37,10 +30,24 @@ func _input(event: InputEvent):
 		if event.pressed and event.button_index == JOY_BUTTON_B:
 			get_tree().quit()
 	
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_ENTER:
-			$"/root/Gamestate".
-	
-	if event is InputEventJoypadButton:
-		if event.pressed and event.button_index == JOY_BUTTON_A:
-			get_tree().quit()
+	if $"/root/Gamestate".get_playercount() < 2:
+		if event is InputEventKey:
+			if event.pressed and event.keycode == KEY_ENTER:
+				var deviceNumber = str(event.device)
+				
+				var playerName = "k" + deviceNumber
+				
+				if not $"/root/Gamestate".has_player(playerName):
+					print("Add keyboard player " + playerName)
+					$"/root/Gamestate".add_player(playerName)
+				
+		
+		if event is InputEventJoypadButton:
+			if event.pressed and event.button_index == JOY_BUTTON_A:
+				var deviceNumber = str(event.device)
+				
+				var playerName = "c" + deviceNumber
+				
+				if not $"/root/Gamestate".has_player(playerName):
+					print("Add controller player " + playerName)
+					$"/root/Gamestate".add_player(playerName)

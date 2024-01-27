@@ -6,7 +6,14 @@ var player
 func _ready():
 	player = preload("res://Scenes/player/player.tscn")
 	for n in $"/root/Gamestate".get_playercount():
-		_spawn_player(Vector3.ZERO, $"/root/Gamestate".get_all_players().keys()[n])
+		var spawnPoint = Vector3.ZERO
+		
+		if (n == 1):
+			spawnPoint.y += 1
+		else:
+			spawnPoint.y -= 1
+
+		_spawn_player(spawnPoint, $"/root/Gamestate".get_all_players().keys()[n])
 	
 
 

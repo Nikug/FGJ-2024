@@ -14,8 +14,20 @@ func _process(delta):
 
 # Add a new player to the game
 func add_player(playerName: String, happyScore: int = 0):
-	var playerNumber: int = players.size()
-	players[playerName] = {"playerNumber": playerNumber, "happyScore": happyScore}
+	#var playerNumber: int = 0
+	
+	#for n in get_playercount():
+		#var key = get_all_players().keys()[n]
+		#
+		#if inputmethod in key:
+			#playerNumber += 1
+	#
+	#var playerName = inputmethod + str(playerNumber)
+	
+	players[playerName] = {"happyScore": happyScore}
+
+func has_player(playerName: String):
+	return players.has(playerName)
 
 # Remove a player from the game
 func remove_player(playerName: String):
