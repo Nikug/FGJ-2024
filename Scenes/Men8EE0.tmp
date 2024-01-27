@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cvuux8hnoeuwv"]
 
 [ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_ffq2e"]
-[ext_resource type="Texture2D" uid="uid://bdwksvddbgyhh" path="res://Art/cats-ai-bg.jpg" id="2_wjglr"]
+[ext_resource type="Texture2D" uid="uid://csc7ooog027ws" path="res://assets/placeholder_menu_background.png" id="1_kgq13"]
 [ext_resource type="Theme" uid="uid://bi41fyh7o6ods" path="res://UI/base_theme.tres" id="3_nkbuk"]
 [ext_resource type="Texture2D" uid="uid://s20smk11whus" path="res://assets/cat_faces/UNHAPPY.png" id="4_kmnyy"]
 [ext_resource type="AudioStream" uid="uid://blv7li2belh6f" path="res://SFX/join.wav" id="6_1v388"]
@@ -35,17 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_wjglr")
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color(100, 100, 100, 0.392157)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_wjglr")
+texture = ExtResource("1_kgq13")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

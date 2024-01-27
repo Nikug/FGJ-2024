@@ -6,6 +6,7 @@ var platform
 var collision_shape
 var list_of_platforms = []
 const max_platforms = 10
+@export var percentageFromCenter = 80
 @export var eSinE: PackedScene
 
 
@@ -26,8 +27,11 @@ func _physics_process(_delta):
 
 func _position_eSinE(p, e):
 	var size = p.get_node("CollisionShape3D").get_shape().size
-	e.position.x = randi() % int(size.x) - size.x / 2
-	e.position.y = randi() % int(size.y) - size.y / 2
+
+	var ratio = (randi() % percentageFromCenter * 2) - percentageFromCenter
+	var ratioy = (randi() % percentageFromCenter* 2) - percentageFromCenter
+	e.position.x = ratio * size.x /2 / 100
+	e.position.y = ratioy * size.y/2 / 100
 
 func _create_eSinE(instance):
 	var i = eSinE.instantiate()
