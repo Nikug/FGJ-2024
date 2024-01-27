@@ -6,6 +6,8 @@ var laughmeter = preload("res://Scenes/cat-happiness/cat-happiness.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = preload("res://Scenes/player/player.tscn")
+	$"/root/Audioplayer".change_background_music("level-1")
+	
 	var i = 0;
 	for playerId in $"/root/Gamestate".get_all_players().keys():
 		var spawnPoint = Vector3.ZERO
