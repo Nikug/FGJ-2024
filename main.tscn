@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://day5aamg1cc62"]
+[gd_scene load_steps=8 format=3 uid="uid://day5aamg1cc62"]
 
 [ext_resource type="PackedScene" uid="uid://cy2c6b67uq4c6" path="res://Scenes/PlatformSpawner/PlatformSpawner.tscn" id="1_jw306"]
 [ext_resource type="PackedScene" uid="uid://dthtas16ms1g1" path="res://Scenes/Platform/Start__platform.tscn" id="2_ltv1y"]
+[ext_resource type="PackedScene" uid="uid://bru13edxlte41" path="res://Scenes/player/player.tscn" id="3_tisew"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t7urw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -15,6 +16,9 @@ background_mode = 2
 sky = SubResource("Sky_fg4hp")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a38pl"]
+size = Vector3(1, 8.0752, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -35,3 +39,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 [node name="Starting_platForm" parent="." instance=ExtResource("2_ltv1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32572, 0, 0)
 movement_velocity = Vector3(-2, 0, 0)
+
+[node name="Bounds" type="Node3D" parent="."]
+
+[node name="LeftBound" type="StaticBody3D" parent="Bounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.779, 0, 0.5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bounds/LeftBound"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+shape = SubResource("BoxShape3D_a38pl")
+
+[node name="RightBound" type="StaticBody3D" parent="Bounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.549, 0, 0.5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bounds/RightBound"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+shape = SubResource("BoxShape3D_a38pl")
+
+[node name="Player" parent="." instance=ExtResource("3_tisew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
