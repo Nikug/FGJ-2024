@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmkq842g62qgh"]
+
+[ext_resource type="Script" path="res://Scenes/end-game/EndGame.gd" id="1_yfed3"]
+[ext_resource type="Texture2D" uid="uid://bdwksvddbgyhh" path="res://Art/cats-ai-bg.jpg" id="2_ywdvb"]
+[ext_resource type="Theme" uid="uid://bi41fyh7o6ods" path="res://UI/base_theme.tres" id="3_pp7uv"]
+
+[sub_resource type="SystemFont" id="SystemFont_t5035"]
+
+[sub_resource type="FontVariation" id="FontVariation_k712x"]
+base_font = SubResource("SystemFont_t5035")
+variation_embolden = 0.72
+spacing_glyph = 6
+spacing_space = 10
+
+[sub_resource type="SystemFont" id="SystemFont_irb7x"]
+font_names = PackedStringArray("Comic Sans MS")
+font_weight = 800
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yfed3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ywdvb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.580392, 0.219608, 1)
+theme_override_colors/font_outline_color = Color(0.697962, 0.203969, 3.85046e-07, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = SubResource("FontVariation_k712x")
+theme_override_font_sizes/font_size = 64
+text = "PLAYER 1 
+MADE MEOW LAUGH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+
+[node name="sTArTgAmE" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+theme = ExtResource("3_pp7uv")
+theme_override_fonts/font = SubResource("SystemFont_irb7x")
+theme_override_font_sizes/font_size = 30
+text = "PLAY AGAIN"
+
+[node name="Separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="mainmenu" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+theme = ExtResource("3_pp7uv")
+theme_override_fonts/font = SubResource("SystemFont_irb7x")
+theme_override_font_sizes/font_size = 30
+text = "MAIN MENU"
+
+[node name="Separator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ExiTbUTtOn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+theme = ExtResource("3_pp7uv")
+theme_override_fonts/font = SubResource("SystemFont_irb7x")
+theme_override_font_sizes/font_size = 30
+text = "EXIT"

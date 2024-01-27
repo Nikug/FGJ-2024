@@ -19,7 +19,7 @@ func _ready():
 
 		var isSecondPlayer = i == 1
 		_spawn_player(spawnPoint, playerId, isSecondPlayer)
-		add_happy_meter(Vector2(100 * i, 0), playerId, isSecondPlayer)
+		add_happy_meter(Vector2(200 * i, 0), playerId, isSecondPlayer)
 		i += 1
 	
 

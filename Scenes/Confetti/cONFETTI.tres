@@ -3,7 +3,7 @@
 [sub_resource type="Curve" id="Curve_4s4d2"]
 min_value = -2.0
 max_value = 2.0
-_data = [Vector2(0, -2), 0.0, 0.0, 0, 0, Vector2(1, 2), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.470588), 0.0, 0.0, 0, 0, Vector2(0.427807, -0.0168066), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [resource]
