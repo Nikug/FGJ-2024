@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dks5oyiuuctu2"]
+
+[ext_resource type="Texture2D" uid="uid://c8k5edi5go3f4" path="res://assets/placeholder_backgound.png" id="1_n5q7y"]
+
+[node name="BAcKGrOuNdWaLl" type="Sprite3D"]
+texture = ExtResource("1_n5q7y")
