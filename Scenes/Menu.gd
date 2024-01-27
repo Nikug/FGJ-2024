@@ -13,7 +13,7 @@ extends Control
 @onready var audio_join_2 = $audio_join_2
 @onready var avatar_1 = $MarginContainer/player_avatar_1/avatar_1
 @onready var avatar_2 = $player_avatar_2/avatar_2
-
+const GRAY = preload("res://Shaders/gray.gdshader")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	s_t_ar_tg_am_e.button_down.connect(on_start_button_down)
@@ -88,7 +88,8 @@ func _player_joined(inputMethod: String, deviceNumber: String):
 		player_label_1.text = _form_player_label(inputMethod, deviceNumber)
 	elif $"/root/Gamestate".get_playercount() == 2:
 		avatar_2.visible = true
-		avatar_2.modulate = Color.SADDLE_BROWN
+		avatar_2.material = ShaderMaterial.new()
+		avatar_2.material.shader = GRAY
 		audio_join_2.play()
 		player_label_2.text = _form_player_label(inputMethod, deviceNumber)
 	
