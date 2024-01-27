@@ -2,7 +2,7 @@ extends Node3D
 
 var player = preload("res://Scenes/player/player.tscn")
 var laughmeter = preload("res://Scenes/cat-happiness/cat-happiness.tscn")
-
+const GRAY = preload("res://Shaders/gray.gdshader")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = preload("res://Scenes/player/player.tscn")
@@ -38,7 +38,8 @@ func _spawn_player(pos: Vector3, id, tint: bool):
 	print(sprite)
 	if (tint):
 		print("tint")
-		sprite.modulate = Color.SADDLE_BROWN
+		#sprite.material = AnimatedTexture.new()
+		#sprite.material.shader = GRAY
 	add_child(instance)
 
 func add_happy_meter(pos: Vector2, key: String, tint: bool):
@@ -47,6 +48,7 @@ func add_happy_meter(pos: Vector2, key: String, tint: bool):
 	instance.player_id = key
 	if tint:
 		var sprite = instance.get_node("Cat-pic")
-		sprite.modulate = Color.SADDLE_BROWN
+		sprite.material = ShaderMaterial.new()
+		sprite.material.shader = GRAY
 	add_child(instance)
 	
