@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cb4x5hevwyu12"]
+[gd_scene load_steps=15 format=3 uid="uid://cb4x5hevwyu12"]
 
 [ext_resource type="Script" path="res://Scenes/Throwable/throwable.gd" id="2_co3ff"]
 [ext_resource type="Texture2D" uid="uid://n0lqjmvmg7mv" path="res://assets/Slappables/FISHBOWL-1.png" id="2_f288v"]
@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cd1du5vuptend" path="res://assets/Slappables/FISHBOWL-4.png" id="5_mojgc"]
 [ext_resource type="Texture2D" uid="uid://chawhqo1f48cb" path="res://assets/Slappables/FISHBOWL-5.png" id="6_bexjd"]
 [ext_resource type="Texture2D" uid="uid://docbdh7xthgim" path="res://assets/Slappables/FISHBOWL-6.png" id="7_m8udx"]
+[ext_resource type="Texture2D" uid="uid://b5sanybjxh4fw" path="res://assets/Slappables/LAVALAMP-1.png" id="8_oiyxb"]
+[ext_resource type="Texture2D" uid="uid://cqy4fcg06cfno" path="res://assets/Slappables/LAVALAMP-2.png" id="9_ejqfh"]
+[ext_resource type="Texture2D" uid="uid://djkwia3jw0wtn" path="res://assets/Slappables/LAVALAMP-3.png" id="10_7exan"]
+[ext_resource type="Texture2D" uid="uid://cqk8us3h77ple" path="res://assets/Slappables/LAVALAMP-4.png" id="11_h27tw"]
+[ext_resource type="Texture2D" uid="uid://dh5f5u0t5yxt3" path="res://assets/Slappables/LAVALAMP-5.png" id="12_5fehn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s56hg"]
 size = Vector3(1.59302, 2.49409, 5.19312)
@@ -33,7 +38,39 @@ animations = [{
 "texture": ExtResource("7_m8udx")
 }],
 "loop": true,
-"name": &"default",
+"name": &"fisu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_oiyxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ejqfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7exan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h27tw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5fehn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h27tw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7exan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ejqfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oiyxb")
+}],
+"loop": true,
+"name": &"lavalambbu",
 "speed": 5.0
 }]
 
@@ -58,4 +95,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 0.1
 shaded = true
 alpha_cut = 2
 sprite_frames = SubResource("SpriteFrames_arf0t")
-frame_progress = 0.506833
+animation = &"fisu"
+frame_progress = 0.537892
