@@ -73,12 +73,14 @@ func _form_player_label(inputMethod: String, deviceNumber: String):
 	if inputMethod == 'k':
 		text += "Keyboard"
 	elif inputMethod == 'c':
-		text += "Controller " + deviceNumber
+		text += "Controller " + str((int(deviceNumber)) + 1)
 	
 	return text;
 	
 
 func _player_joined(inputMethod: String, deviceNumber: String):
+	s_t_ar_tg_am_e.disabled = false
+
 	if $"/root/Gamestate".get_playercount() == 1:
 		avatar_1.visible = true
 		avatar_1.modulate = Color(1, 1, 1, 1)
