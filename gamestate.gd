@@ -2,21 +2,25 @@ extends Node
 
 # Dictionary to store player information
 var players: Dictionary = {}
-var happinessIncrementDefault: int = 5
+var happinessIncrementDefault: int = 20
+
+@onready var endgame = preload("res://Scenes/end-game/EndGame.tscn")
+
+func _process(delta):
+	for player in get_all_players():
+		if (get_mood(player) == "overjoyed"):
+			get_tree().change_scene_to_packed(endgame)
+
+func reset_game(remove_players = false):
+	if (remove_players):
+		players = {}
+	else:
+		for player in get_all_players().keys():
+			set_happiness_score(player, 0)
 
 
 # Add a new player to the game
 func add_player(playerName: String, happyScore: int = 0):
-	#var playerNumber: int = 0
-
-	#for n in get_playercount():
-	#var key = get_all_players().keys()[n]
-	#
-	#if inputmethod in key:
-	#playerNumber += 1
-	#
-	#var playerName = inputmethod + str(playerNumber)
-
 	players[playerName] = {"happyScore": happyScore}
 
 
@@ -40,7 +44,7 @@ func get_happiness_score(playerName: String) -> int:
 	return players.get(playerName, {"happyScore": 0})["happyScore"]
 
 
-# Get the happiness score of a specific player
+# Get the happiness score of a specific player. "angry", "neutral", "happy", "overjoyed"
 func get_mood(playerName: String):
 	var score = get_happiness_score(playerName)
 	if score <= 10:
@@ -49,6 +53,8 @@ func get_mood(playerName: String):
 		return "neutral"
 	elif 50 < score && score <= 100:
 		return "happy"
+	elif  score >= 100:
+		return "overjoyed"
 
 
 # Set the happiness score of a specific player
