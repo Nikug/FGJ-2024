@@ -21,7 +21,7 @@ func _process(delta):
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 	if Input.is_action_just_released("slap"):
-		_animated_sprite.play("slap")
+		slap()
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -33,3 +33,5 @@ func _process(delta):
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
+func slap():
+	_animated_sprite.play("slap")
