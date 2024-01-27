@@ -15,6 +15,13 @@ extends Control
 @onready var avatar_2 = $HBoxContainer/player_avatar_2/avatar_2
 @onready var magic_1 = $MarginContainer/player_avatar_1/magic_1
 @onready var magic_2 = $HBoxContainer/magic_2
+@onready var avatar_alt_1 = $alt_1
+@onready var avatar_alt_2 = $alt_2
+@onready var avatar_alt_3 = $alt_3
+
+var catAlt1 = load("res://assets/cat_faces/pekka.png")
+var catAlt2 = load("res://assets/cat_faces/alex.png")
+var catAlt3 = load("res://assets/cat_faces/jussi.png")
 
 const GRAY = preload("res://Shaders/gray.gdshader")
 # Called when the node enters the scene tree for the first time.
@@ -106,6 +113,10 @@ func _player_joined(inputMethod: String, deviceNumber: String):
 		audio_join_1.play()
 		#player_label_1.text = _form_player_label(inputMethod, deviceNumber)
 		player_label_1.text = $"/root/Gamestate".get_player(inputMethod + deviceNumber).displayName
+		if ($"/root/Gamestate".funModifier):
+			set_alt_avatar(0)
+			
+			
 	elif $"/root/Gamestate".get_playercount() == 2:
 		avatar_2.visible = true
 		avatar_2.material = ShaderMaterial.new()
@@ -113,4 +124,37 @@ func _player_joined(inputMethod: String, deviceNumber: String):
 		audio_join_2.play()
 		#player_label_2.text = _form_player_label(inputMethod, deviceNumber)
 		player_label_2.text = $"/root/Gamestate".get_player(inputMethod + deviceNumber).displayName
+		if ($"/root/Gamestate".funModifier):
+			set_alt_avatar(1)
+	
+
+func set_alt_avatar(playerIndex: int):
+	var players = $"/root/Gamestate".get_all_players()
+	print("set alt avatar")
+	if (playerIndex == 0):
+		print("set alt avatar 0")
+		var player = players[players.keys()[0]]
+		match (player.displayName):
+			"Alex":
+				avatar_alt_2.visible = true
+				avatar_1.texture = avatar_alt_2
+			"Jussi":
+				avatar_alt_3.visible = true
+				avatar_1.texture = avatar_alt_3
+			"Pekka":
+				avatar_alt_1.visible = true
+				avatar_1.texture = avatar_alt_1
+	
+	if (playerIndex == 1):
+		var player = players[players.keys()[1]]
+		match (player.displayName):
+			"Alex":
+				avatar_alt_2.visible = true
+				avatar_2.texture = avatar_alt_2
+			"Jussi":
+				avatar_alt_3.visible = true
+				avatar_2.texture = avatar_alt_3
+			"Pekka":
+				avatar_alt_1.visible = true
+				avatar_2.texture = avatar_alt_1
 	
