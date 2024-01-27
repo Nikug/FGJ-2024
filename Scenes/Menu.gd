@@ -6,23 +6,42 @@ extends Control
 @onready var exi_tb_u_tt_on = $MarginContainer/HBoxContainer/VBoxContainer/ExiTbUTtOn as Button
 @onready var start_level = preload("res://main.tscn")
 @onready var player_avatar_1 = $MarginContainer/player_avatar_1
-@onready var player_avatar_2 = $player_avatar_2
-@onready var player_label_1 = $MarginContainer/player_avatar_1/player_label_1
-@onready var player_label_2 = $player_avatar_2/player_label_2
+@onready var player_avatar_2 = $HBoxContainer/player_avatar_2
+@onready var player_label_1 = $MarginContainer/player_avatar_1/VBoxContainer/player_label_1
+@onready var player_label_2 = $HBoxContainer/player_avatar_2/player_label_2
 @onready var audio_join_1 = $audio_join_1
 @onready var audio_join_2 = $audio_join_2
-@onready var avatar_1 = $MarginContainer/player_avatar_1/avatar_1
-@onready var avatar_2 = $player_avatar_2/avatar_2
+@onready var avatar_1 = $MarginContainer/player_avatar_1/VBoxContainer/avatar_1
+@onready var avatar_2 = $HBoxContainer/player_avatar_2/avatar_2
+@onready var magic_1 = $MarginContainer/player_avatar_1/magic_1
+@onready var magic_2 = $HBoxContainer/magic_2
+
 const GRAY = preload("res://Shaders/gray.gdshader")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	s_t_ar_tg_am_e.button_down.connect(on_start_button_down)
 	exi_tb_u_tt_on.button_down.connect(on_exit_button_down)
 	
-	#avatar_1.modulate = Color(1, 1, 1, 0.6)
+	get_tree().get_root().size_changed.connect(_resize) 
+
 	avatar_1.modulate = Color.DIM_GRAY
-	#avatar_2.modulate = Color(255, 50, 255, 0.6)
 	avatar_2.modulate = Color.DIM_GRAY
+	
+	_do_magic()
+
+func _do_magic():
+	var width = DisplayServer.window_get_size().x
+	var buttons_width = 300
+	var avatar_width = 300
+	
+	var empty_space = width - buttons_width - (2 * avatar_width)
+	var magic_number = empty_space / 4
+	
+	magic_1.custom_minimum_size = Vector2(magic_number, 0)
+	magic_2.custom_minimum_size = Vector2(magic_number, 0)
+
+func _resize():
+	_do_magic()
 
 func on_start_button_down() -> void:
 	get_tree().change_scene_to_packed(start_level)

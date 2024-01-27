@@ -126,54 +126,69 @@ Press (A) to join"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="player_avatar_1" type="VBoxContainer" parent="MarginContainer"]
+[node name="player_avatar_1" type="HBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(300, 250)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="avatar_1" type="TextureRect" parent="MarginContainer/player_avatar_1"]
+[node name="magic_1" type="Control" parent="MarginContainer/player_avatar_1"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/player_avatar_1"]
+custom_minimum_size = Vector2(300, 250)
+layout_mode = 2
+
+[node name="avatar_1" type="TextureRect" parent="MarginContainer/player_avatar_1/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("4_kmnyy")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="player_label_1" type="Label" parent="MarginContainer/player_avatar_1"]
+[node name="player_label_1" type="Label" parent="MarginContainer/player_avatar_1/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_nkbuk")
 theme_override_constants/outline_size = 16
 text = "Join"
 
-[node name="player_avatar_2" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(300, 250)
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -125.0
-offset_bottom = 125.0
+offset_left = -300.0
+offset_top = -141.5
+offset_bottom = 141.5
 grow_horizontal = 0
 grow_vertical = 2
+
+[node name="player_avatar_2" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 250)
+layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="avatar_2" type="TextureRect" parent="player_avatar_2"]
+[node name="avatar_2" type="TextureRect" parent="HBoxContainer/player_avatar_2"]
 layout_mode = 2
 texture = ExtResource("4_kmnyy")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="player_label_2" type="Label" parent="player_avatar_2"]
+[node name="player_label_2" type="Label" parent="HBoxContainer/player_avatar_2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme = ExtResource("3_nkbuk")
 theme_override_constants/outline_size = 16
 text = "Join"
+
+[node name="magic_2" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
 
 [node name="audio_join_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_1v388")
