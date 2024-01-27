@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://cvuux8hnoeuwv"]
 
 [ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_ffq2e"]
-[ext_resource type="Texture2D" uid="uid://csc7ooog027ws" path="res://assets/placeholder_menu_background.png" id="1_kgq13"]
+[ext_resource type="Texture2D" uid="uid://bdwksvddbgyhh" path="res://Art/cats-ai-bg.jpg" id="2_wjglr"]
 [ext_resource type="Theme" uid="uid://bi41fyh7o6ods" path="res://UI/base_theme.tres" id="3_nkbuk"]
 [ext_resource type="Texture2D" uid="uid://s20smk11whus" path="res://assets/cat_faces/UNHAPPY.png" id="4_kmnyy"]
 [ext_resource type="Texture2D" uid="uid://cle8418faw02h" path="res://assets/cat_faces/NEUTRAL.png" id="5_u12yy"]
-[ext_resource type="AudioStream" uid="uid://blv7li2belh6f" path="res://SFX/join.wav" id="6_1v388"]
-[ext_resource type="AudioStream" uid="uid://marv38p3xgxi" path="res://SFX/join2.wav" id="7_w2qmp"]
+[ext_resource type="AudioStream" uid="uid://jlw3refiodom" path="res://SFX/join.wav" id="6_1v388"]
+[ext_resource type="AudioStream" uid="uid://bef3x2i06pp4h" path="res://SFX/join2.wav" id="7_w2qmp"]
 
 [sub_resource type="SystemFont" id="SystemFont_t5035"]
 
@@ -36,7 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_kgq13")
+texture = ExtResource("2_wjglr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
