@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bru13edxlte41"]
+[gd_scene load_steps=22 format=3 uid="uid://bru13edxlte41"]
 
 [ext_resource type="Script" path="res://Scenes/player/player.gd" id="1_xuaj4"]
 [ext_resource type="Texture2D" uid="uid://ut4avnyhfvx3" path="res://Cats/NH-1.png" id="2_1gega"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://bdm0qj6mskn31" path="res://Cats/H-4.png" id="9_5q4as"]
 [ext_resource type="Texture2D" uid="uid://bxadbjgpj71l6" path="res://Cats/NH-4.png" id="9_cojjd"]
 [ext_resource type="Texture2D" uid="uid://xq7qhxgac5rt" path="res://Cats/N-4.png" id="9_q22u0"]
+[ext_resource type="Texture2D" uid="uid://c31yxgvh1f0w0" path="res://Cats/JUMP-1.png" id="10_v3gt1"]
+[ext_resource type="Texture2D" uid="uid://4bt4iostfgv8" path="res://Cats/JUMP-2.png" id="11_benyh"]
+[ext_resource type="Texture2D" uid="uid://bwm36hqpws2f4" path="res://Cats/JUMP-3.png" id="12_058mq"]
 [ext_resource type="Texture2D" uid="uid://f3l0bsikhj44" path="res://Cats/SLAP-1.png" id="14_jmtgc"]
 [ext_resource type="Texture2D" uid="uid://d1qbdekf6in7b" path="res://Cats/SLAP-2.png" id="15_myvpb"]
 [ext_resource type="Texture2D" uid="uid://cgsy31ht8tw0g" path="res://Cats/SLAP-3.png" id="16_4vg81"]
@@ -46,6 +49,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("12_058mq")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("6_rpsmo")
 }],
 "loop": true,
@@ -67,6 +78,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"happy_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_v3gt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_benyh")
+}],
+"loop": false,
+"name": &"hop",
 "speed": 5.0
 }, {
 "frames": [{
@@ -128,7 +150,9 @@ sorting_offset = 1.0
 shaded = true
 alpha_cut = 2
 sprite_frames = SubResource("SpriteFrames_567ui")
-animation = &"slap"
+animation = &"hop"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.115144, -0.279115, 0)

@@ -47,6 +47,7 @@ func _process(_delta):
 		Input.is_action_just_pressed("hop_%s" % [player_id])
 		and not is_slapping_hard
 		and not is_hopping_in_your_hood
+		and is_on_wall()
 	):
 		_hop()
 
@@ -71,16 +72,16 @@ func _physics_process(delta):
 		if Input.is_action_pressed("move_up_%s" % [player_id]):
 			direction.y += 1
 
-	if direction != Vector3.ZERO and not is_slapping_hard:
-		direction = direction.normalized()
-		if direction.x < 0:
-			_animated_sprite.play(_get_animation("idle"))
-			walk_player.stop()
+	if not is_hopping_in_your_hood and not is_slapping_hard:
+		if direction != Vector3.ZERO:
+			direction = direction.normalized()
+			if direction.x < 0:
+				_animated_sprite.play(_get_animation("idle"))
+				walk_player.stop()
+			else:
+				_animated_sprite.play(_get_animation("walk"), 2)
+				_play_run()
 		else:
-			_animated_sprite.play(_get_animation("walk"), 2)
-			_play_run()
-	else:
-		if not is_slapping_hard:
 			_animated_sprite.play(_get_animation("walk"))
 			_play_walk()
 
@@ -92,6 +93,8 @@ func _physics_process(delta):
 
 	if !is_on_wall():
 		target_velocity.z += delta * gravity
+		if target_velocity.z < 0.0:
+			_animated_sprite.play("fall")
 
 	velocity = target_velocity
 	move_and_slide()
@@ -159,3 +162,4 @@ func _hop():
 	is_hopping_in_your_hood = true
 	just_hopped = true
 	target_velocity.z = hop_power
+	_animated_sprite.play("hop")
