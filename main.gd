@@ -37,9 +37,7 @@ func _spawn_player(pos: Vector3, id, tint: bool):
 	var sprite = instance.get_node("AnimatedSprite2D")
 	print(sprite)
 	if (tint):
-		print("tint")
-		#sprite.material = AnimatedTexture.new()
-		#sprite.material.shader = GRAY
+		instance.is_gray = true
 	add_child(instance)
 
 func add_happy_meter(pos: Vector2, key: String, tint: bool):

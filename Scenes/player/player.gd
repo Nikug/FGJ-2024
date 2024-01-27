@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var hop_power = 1.0
 @export var gravity = -1.0
 @export var player_id = "1"
+@export var is_gray = false
 @onready var slap_player = $AudioStreamPlayer3D
 @onready var walk_player = $AudioStreamPlayer3D
 @onready var score_manager = $"/root/Gamestate"
@@ -18,6 +19,13 @@ var walk_sounds = []
 var mood = "angry"
 var confetti
 
+func a(animation: String):
+	var postfix = ""
+	
+	if is_gray:
+		postfix = "_gray"
+
+	return animation + postfix
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -76,13 +84,13 @@ func _physics_process(delta):
 		if direction != Vector3.ZERO:
 			direction = direction.normalized()
 			if direction.x < 0:
-				_animated_sprite.play(_get_animation("idle"))
+				_animated_sprite.play(_get_animation(a("idle")))
 				walk_player.stop()
 			else:
-				_animated_sprite.play(_get_animation("walk"), 2)
+				_animated_sprite.play(_get_animation(a("walk")), 2)
 				_play_run()
 		else:
-			_animated_sprite.play(_get_animation("walk"))
+			_animated_sprite.play(_get_animation(a("walk")))
 			_play_walk()
 
 	target_velocity.x = direction.x * speed
@@ -94,7 +102,7 @@ func _physics_process(delta):
 	if !is_on_wall():
 		target_velocity.z += delta * gravity
 		if target_velocity.z < 0.0:
-			_animated_sprite.play("fall")
+			_animated_sprite.play(a("fall"))
 
 	velocity = target_velocity
 	move_and_slide()
@@ -114,7 +122,7 @@ func _physics_process(delta):
 
 func _slap():
 	is_slapping_hard = true
-	_animated_sprite.play("slap")
+	_animated_sprite.play(a("slap"))
 	_play_slap_sound()
 	var instance = confetti.instantiate()
 	instance.position = $ConfettiPosition.position
@@ -162,4 +170,4 @@ func _hop():
 	is_hopping_in_your_hood = true
 	just_hopped = true
 	target_velocity.z = hop_power
-	_animated_sprite.play("hop")
+	_animated_sprite.play(a("hop"))
