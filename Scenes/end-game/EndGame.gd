@@ -7,6 +7,7 @@ extends Control
 @onready var menubutton = $MarginContainer/HBoxContainer/VBoxContainer/mainmenu as Button
 @onready var start_level = preload("res://main.tscn")
 @onready var menu_level = preload("res://Scenes/Menu.tscn")
+@onready var label = $MarginContainer/VBoxContainer/Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +15,21 @@ func _ready():
 	exi_tb_u_tt_on.button_down.connect(on_exit_button_down)
 	menubutton.button_down.connect(on_menu_button_down)
 	
-	var players = $"/root/Gamestate".get_playercount()
+	var players = $"/root/Gamestate".get_all_players()
+	var player_count = players.size()
+
+	if player_count < 1:
+		label.text = "You won the game!"
+		return
+
+	var winner = {"displayName": "You", "happyScore": -1}
+	
+	for playerName in players:
+		var player = players[playerName]
+		if player["happyScore"] > winner["happyScore"]:
+			winner = player
+	
+	label.text = winner.displayName + " won the game!"
 
 func on_start_button_down() -> void:
 	$"/root/Gamestate".reset_game()

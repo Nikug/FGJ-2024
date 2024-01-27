@@ -4,8 +4,8 @@ extends Node
 
 # Dictionary to store player information
 var players: Dictionary = {}
-var happinessIncrementDefault: int = 20
-var cat_names = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Henry"];
+var happinessIncrementDefault: int = 100
+var cat_names = ["Cheese Wizard", "Miisu", "Mutu", "El Pörrö"];
 
 # Placeholder method for getting a random name
 func get_random_name() -> String:
@@ -21,6 +21,7 @@ func _process(delta):
 func reset_game(remove_players = false):
 	if (remove_players):
 		players = {}
+		cat_names = ["Cheese Wizard", "Miisu", "Mutu", "El Pörrö"];
 	else:
 		for player in get_all_players().keys():
 			set_happiness_score(player, 0)
