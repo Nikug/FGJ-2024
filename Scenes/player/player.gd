@@ -127,4 +127,5 @@ func _check_mood():
 func _DIE():
 	print("DEATH")
 	death.emit()
-	position = Vector3.ZERO
+	position = Vector3(0, 0, 0.5)
+	target_velocity.z = 0
