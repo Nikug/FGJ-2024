@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var gravity = -100.0
 @onready var _animated_sprite = $AnimatedSprite2D
 var target_velocity = Vector3.ZERO
-@export var player_id = 0
+@export var player_id = 1
 
 
 # Called when the node enters the scene tree for the first time.
