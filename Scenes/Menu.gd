@@ -19,4 +19,7 @@ func on_exit_button_down() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("yoink"):
+		pass
+		# Add player to gmaState
+		#$gameState.

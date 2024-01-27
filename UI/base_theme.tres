@@ -1,0 +1,34 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bi41fyh7o6ods"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iakoy"]
+bg_color = Color(0.999999, 0.660538, 0.559505, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npb66"]
+bg_color = Color(0.999999, 0.866277, 0.826245, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl7or"]
+bg_color = Color(1, 0.794042, 0.732374, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kso1e"]
+bg_color = Color(1, 0.725527, 0.643524, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_6wcno"]
+font_weight = 600
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u5sir"]
+
+[resource]
+Button/colors/font_color = Color(0.697962, 0.203969, 3.85046e-07, 1)
+Button/colors/font_disabled_color = Color(0.999999, 0.936654, 0.91774, 1)
+Button/colors/font_hover_color = Color(0.697962, 0.203969, 3.85046e-07, 1)
+Button/colors/font_hover_pressed_color = Color(0.490196, 0.133333, 0, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_iakoy")
+Button/styles/hover = SubResource("StyleBoxFlat_npb66")
+Button/styles/normal = SubResource("StyleBoxFlat_nl7or")
+Button/styles/pressed = SubResource("StyleBoxFlat_kso1e")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0.0901961, 0.00784314, 0, 1)
+Label/constants/outline_size = 10
+Label/font_sizes/font_size = 32
+Label/fonts/font = SubResource("SystemFont_6wcno")
+Label/styles/normal = SubResource("StyleBoxEmpty_u5sir")

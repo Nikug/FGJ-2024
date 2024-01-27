@@ -4,24 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://cohgihvua6d8h" path="res://Art/Placeholder.png" id="2_8h8iq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yxr5t"]
-size = Vector3(5.73938, 3.05426, 0.5)
+size = Vector3(1.44751, 1.53151, 0.5)
 
 [node name="Platform" type="CharacterBody3D"]
-axis_lock_linear_y = true
-axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-slide_on_ceiling = false
-floor_stop_on_slope = false
-floor_constant_speed = true
-floor_block_on_wall = false
 script = ExtResource("1_sm6ki")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003479, 0.00352594, -0.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00109863, 0.00233769, -0.25)
 shape = SubResource("BoxShape3D_yxr5t")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
 texture = ExtResource("2_8h8iq")
