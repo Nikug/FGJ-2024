@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=4 format=3 uid="uid://cmgdj7psbn33c"]
 
 [ext_resource type="Texture2D" uid="uid://2vjcy2c2fcpb" path="res://Scenes/cat-happiness/manic-cat.jpg" id="1_ard4l"]
@@ -9,6 +10,10 @@
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("2_co3ff")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.08165e-12, 2.08165e-12, 0.1)
+texture = ExtResource("2_5bwf4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_rjy56")
