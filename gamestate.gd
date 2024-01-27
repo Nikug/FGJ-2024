@@ -4,7 +4,7 @@ extends Node
 
 # Dictionary to store player information
 var players: Dictionary = {}
-var happinessIncrementDefault: int = 100
+var happinessIncrementDefault: int = 5
 var cat_names = ["Cheese Wizard", "Miisu", "Mutu", "El Pörrö"];
 
 # Placeholder method for getting a random name
