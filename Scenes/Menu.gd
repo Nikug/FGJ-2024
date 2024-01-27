@@ -5,6 +5,10 @@ extends Control
 @onready var s_t_ar_tg_am_e = $MarginContainer/HBoxContainer/VBoxContainer/sTArTgAmE as Button
 @onready var exi_tb_u_tt_on = $MarginContainer/HBoxContainer/VBoxContainer/ExiTbUTtOn as Button
 @onready var start_level = preload("res://main.tscn")
+@onready var player_avatar_1 = $MarginContainer/player_avatar_1
+@onready var player_avatar_2 = $player_avatar_2
+@onready var player_label_1 = $MarginContainer/player_avatar_1/player_label_1
+@onready var player_label_2 = $player_avatar_2/player_label_2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,6 +44,7 @@ func _input(event: InputEvent):
 				if not $"/root/Gamestate".has_player(playerName):
 					print("Add keyboard player " + playerName)
 					$"/root/Gamestate".add_player(playerName)
+					_player_joined("k", deviceNumber)
 				
 		
 		if event is InputEventJoypadButton:
@@ -51,3 +56,26 @@ func _input(event: InputEvent):
 				if not $"/root/Gamestate".has_player(playerName):
 					print("Add controller player " + playerName)
 					$"/root/Gamestate".add_player(playerName)
+					_player_joined("c", deviceNumber)
+
+func _form_player_label(inputMethod: String, deviceNumber: String):
+	var text = ""
+	
+	if inputMethod == 'k':
+		text += "Keyboard"
+	elif inputMethod == 'c':
+		text += "Controller " + deviceNumber
+	
+	return text;
+	
+
+func _player_joined(inputMethod: String, deviceNumber: String):
+	if not player_avatar_1.visible:
+		player_avatar_1.visible = true
+			
+		player_label_1.text = _form_player_label(inputMethod, deviceNumber)
+	elif not player_avatar_2.visible:
+		player_avatar_2.visible = true
+		
+		player_label_2.text = _form_player_label(inputMethod, deviceNumber)
+	
