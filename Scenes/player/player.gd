@@ -48,11 +48,11 @@ func _physics_process(delta):
 
 	velocity = target_velocity
 	move_and_slide()
-	
+
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		
-		if collision.get_collider().is_in_group("item") && _animated_sprite.animation == "slap":
+
+		if collision.get_collider().is_in_group("item") && is_slapping_hard:
 			var item = collision.get_collider()
 			item.get_slapped()
 			break
