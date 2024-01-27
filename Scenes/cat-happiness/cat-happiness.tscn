@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://do2tbdnpno1a"]
+[gd_scene load_steps=11 format=3 uid="uid://do2tbdnpno1a"]
 
 [ext_resource type="Script" path="res://Scenes/cat-happiness/cat-happiness.gd" id="1_es1dt"]
 [ext_resource type="Texture2D" uid="uid://s20smk11whus" path="res://assets/cat_faces/UNHAPPY.png" id="2_aeagy"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://rytl6svs0x66" path="res://Scenes/cat-happiness/over-texture-3.png" id="5_rb8bl"]
 [ext_resource type="Texture2D" uid="uid://d0rt7h3kfjiqm" path="res://Scenes/cat-happiness/fill-texture-3.png" id="6_ffjhs"]
 [ext_resource type="Texture2D" uid="uid://b5lr26pbxmuip" path="res://Scenes/cat-happiness/cat-border-2.png" id="7_np1se"]
+[ext_resource type="Theme" uid="uid://bi41fyh7o6ods" path="res://UI/base_theme.tres" id="8_g3hx5"]
 
 [sub_resource type="Animation" id="Animation_egkuk"]
 resource_name = "pulse"
@@ -36,7 +37,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -982.0
-offset_bottom = -399.0
+offset_bottom = -378.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_es1dt")
@@ -58,6 +59,26 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_dmfny")
 }
+
+[node name="Label" type="Label" parent="Cat-pic"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.835
+offset_top = -8.795
+offset_right = 38.165
+offset_bottom = 25.205
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_g3hx5")
+theme_override_font_sizes/font_size = 24
+text = "NAME"
+horizontal_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
 
 [node name="HappinessBar" type="TextureProgressBar" parent="."]
 layout_mode = 0

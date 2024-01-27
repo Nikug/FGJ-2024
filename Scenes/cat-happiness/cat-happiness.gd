@@ -1,8 +1,17 @@
 extends Control
+@onready var label = $"Cat-pic/Label"
 
 var happyScore = 0
 var player_id = 0
 
+func _ready():
+	var player = $"/root/Gamestate".get_player(player_id)
+	
+	print(player.displayName)
+	print(label.text)
+	
+	label.text = player.displayName
+	print(label.text)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

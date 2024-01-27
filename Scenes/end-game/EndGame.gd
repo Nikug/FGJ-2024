@@ -19,7 +19,7 @@ func _ready():
 	var player_count = players.size()
 
 	if player_count < 1:
-		label.text = "You won the game!"
+		label.text = "You laughed!"
 		return
 
 	var winner = {"displayName": "You", "happyScore": -1}
@@ -29,7 +29,7 @@ func _ready():
 		if player["happyScore"] > winner["happyScore"]:
 			winner = player
 	
-	label.text = winner.displayName + " won the game!"
+	label.text = winner.displayName + " laughed!"
 
 func on_start_button_down() -> void:
 	$"/root/Gamestate".reset_game()
