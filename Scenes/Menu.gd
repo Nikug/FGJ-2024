@@ -26,4 +26,21 @@ func _process(delta):
 
 func _input(event: InputEvent):
 	print(event)
+	print(event.device)
 	print(event.is_action_pressed("yoink_1"))
+	
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_ESCAPE:
+			get_tree().quit()
+	
+	if event is InputEventJoypadButton:
+		if event.pressed and event.button_index == JOY_BUTTON_B:
+			get_tree().quit()
+	
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_ENTER:
+			$"/root/Gamestate".
+	
+	if event is InputEventJoypadButton:
+		if event.pressed and event.button_index == JOY_BUTTON_A:
+			get_tree().quit()

@@ -1,10 +1,10 @@
 extends CharacterBody3D
 
 @export var speed = 2.0
-@export var gravity = -100.0
+@export var gravity = -1.0
 @onready var _animated_sprite = $AnimatedSprite2D
 var target_velocity = Vector3.ZERO
-@export var player_id = 1
+@export var player_id = "1"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -34,7 +34,7 @@ func _physics_process(delta):
 
 	target_velocity.x = direction.x * speed
 	target_velocity.y = direction.y * speed
-	target_velocity.z = delta * gravity
+	target_velocity.z += delta * gravity
 
 	velocity = target_velocity
 	move_and_slide()
