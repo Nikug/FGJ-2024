@@ -64,7 +64,9 @@ func _physics_process(delta):
 
 	target_velocity.x = direction.x * speed
 	target_velocity.y = direction.y * speed
-	target_velocity.z += delta * gravity
+	
+	if !is_on_wall():
+		target_velocity.z += delta * gravity
 
 	velocity = target_velocity
 	move_and_slide()

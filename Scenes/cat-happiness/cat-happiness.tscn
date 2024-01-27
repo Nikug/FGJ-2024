@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://do2tbdnpno1a"]
 
 [ext_resource type="Script" path="res://Scenes/cat-happiness/cat-happiness.gd" id="1_es1dt"]
-[ext_resource type="Texture2D" uid="uid://c00p587j8ox75" path="res://Scenes/cat-happiness/ok-cat.jpg" id="2_vb600"]
+[ext_resource type="Texture2D" uid="uid://s20smk11whus" path="res://assets/cat_faces/UNHAPPY.png" id="2_aeagy"]
 [ext_resource type="Script" path="res://Scenes/cat-happiness/Cat-pic.gd" id="3_iqhqs"]
 [ext_resource type="Texture2D" uid="uid://cuo640lj7xcu8" path="res://Scenes/cat-happiness/under-texture-2.png" id="4_ovg0q"]
 [ext_resource type="Texture2D" uid="uid://cqiu70xwiglpr" path="res://Scenes/cat-happiness/fill-texture-2.png" id="5_eopgh"]
@@ -23,11 +23,11 @@ script = ExtResource("1_es1dt")
 
 [node name="Cat-pic" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 115.0
-offset_right = 103.0
-offset_bottom = 181.0
-texture = ExtResource("2_vb600")
+offset_left = 23.0
+offset_top = 102.0
+offset_right = 130.0
+offset_bottom = 207.0
+texture = ExtResource("2_aeagy")
 expand_mode = 1
 script = ExtResource("3_iqhqs")
 

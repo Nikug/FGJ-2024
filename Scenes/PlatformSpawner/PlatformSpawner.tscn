@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cy2c6b67uq4c6"]
 
 [ext_resource type="Script" path="res://Scenes/PlatformSpawner/PlatformSpawner.gd" id="1_8jhlv"]
-[ext_resource type="PackedScene" uid="uid://cmgdj7psbn33c" path="res://Scenes/Throwable/throwable.tscn" id="2_3k23i"]
+[ext_resource type="PackedScene" uid="uid://cb4x5hevwyu12" path="res://Scenes/Throwable/throwable.tscn" id="2_3k23i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fd26m"]
 size = Vector3(1, 4.97266, 1)
