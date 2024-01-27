@@ -36,7 +36,7 @@ func a(animation: String):
 func _ready():
 	_animated_sprite = $AnimatedSprite2D
 	_animated_sprite.animation_finished.connect(_dont_slap)
-	_animated_sprite.play(_get_animation(a("fall")))
+	_animated_sprite.play("fall")
 
 	slap_sounds = [
 		preload("res://SFX/bonk.wav"),
