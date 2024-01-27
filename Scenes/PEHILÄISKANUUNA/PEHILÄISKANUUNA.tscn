@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqnjqiyvlsayf"]
+
+[ext_resource type="Texture2D" uid="uid://b4ppbrlbfhnv1" path="res://Scenes/PEHILÄISKANUUNA/KANUUNA.PNG" id="2_xceb6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s56hg"]
+size = Vector3(1.59302, 2.49409, 5.19312)
+
+[node name="PEHILÄISKANUUNA" type="CharacterBody3D" groups=["KANUUNA"]]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.08165e-12, 2.08165e-12, 0.1)
+collision_layer = 8
+collision_mask = 0
+up_direction = Vector3(2.07132e-12, 0.995037, 0.0995037)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_s56hg")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 0.1)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("2_xceb6")

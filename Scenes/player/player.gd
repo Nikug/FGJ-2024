@@ -77,6 +77,8 @@ func _process(_delta):
 		if collision.get_collider().is_in_group("killzone"):
 			_DIE()
 			break
+		if collision.get_collider().is_in_group("KANUUNA"):
+			_PEHILÄISKENNOON()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -182,6 +184,15 @@ func _DIE():
 	position = Vector3(0, 0, 0.5)
 	target_velocity.z = 0
 
+func _PEHILÄISKENNOON():
+	print("PEHILÄISKENNOON")
+	score_manager.decrement_happiness(player_id, 20)
+	target_velocity = Vector3(0, 0, 2.5)
+	$"PEHILÄISET".visible = true
+	await get_tree().create_timer(1).timeout
+	target_velocity = Vector3(0, 0, 0)
+	await get_tree().create_timer(1).timeout
+	$"PEHILÄISET".visible = false
 
 func _hop():
 	is_hopping_in_your_hood = true
