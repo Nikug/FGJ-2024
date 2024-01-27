@@ -34,6 +34,7 @@ func _ready():
 	var name =  assets[randi() % assets.size()]
 	if name.a:
 		$Animation.play()
+
 	else:
 		$Animation.queue_free()
 		$Sprite.texture  = name.texture
