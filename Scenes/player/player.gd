@@ -107,7 +107,7 @@ func _physics_process(delta):
 
 	if !is_on_wall():
 		target_velocity.z += delta * gravity
-		if target_velocity.z < 1.0:
+		if target_velocity.z < 0.0:
 			if position.z < 0.0:
 				_animated_sprite.play(a("fall"))
 			else:
@@ -177,7 +177,7 @@ func _DIE():
 	instance.position = position
 	add_child(instance)
 
-	score_manager.decrement_happiness(player_id)
+	score_manager.decrement_happiness(player_id, 10)
 	position = Vector3(0, 0, 0.5)
 	target_velocity.z = 0
 
