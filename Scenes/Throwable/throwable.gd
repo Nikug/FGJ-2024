@@ -27,8 +27,8 @@ var reMOte = {
 var fISHbOwl ={
 	texture=
 	preload("res://assets/Slappables/FISHBOWL-5.png"),
-	h = 3,
-	w = 2,
+	h = 1.5,
+	w = 1,
 	a = true,
 	an = "fisu",
 	hela = 1
@@ -36,15 +36,33 @@ var fISHbOwl ={
 var lavaLamBbu ={
 	texture=
 	preload("res://assets/Slappables/FISHBOWL-5.png"),
-	h = 3,
-	w = 2,
+	h = 2,
+	w = 1,
 	a = true,
 	an = "lavalambbu",
 	hela = 4
 	}
+var limu ={
+	texture=
+	preload("res://assets/Slappables/FISHBOWL-5.png"),
+	h = 1,
+	w = 1,
+	a = true,
+	an = "limu",
+	hela = 1
+	}
+var kaukkari ={
+	texture=
+	preload("res://assets/Slappables/FISHBOWL-5.png"),
+	h = 0.5,
+	w = 0.5,
+	a = true,
+	an = "kaukkari",
+	hela = 1
+	}
 
 func _ready():
-	var assets = [GLass, reMOte, fISHbOwl, lavaLamBbu]
+	var assets = [GLass, fISHbOwl, lavaLamBbu, kaukkari, limu]
 
 	var name =  assets[randi() % assets.size()]
 	hela = name.hela
@@ -56,8 +74,8 @@ func _ready():
 		var size  = sprite_texture.get_size()
 
 		var box = BoxShape3D.new()
-		box.extents.x = 1
-		box.extents.y = 1.5
+		box.extents.x = name.w
+		box.extents.y = name.h
 		box.extents.z = 1
 		$CollisionShape3D.shape = box
 	else:
