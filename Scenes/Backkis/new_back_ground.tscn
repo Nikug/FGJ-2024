@@ -25,6 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.24, 0, 0)
 flip_h = true
 modulate = Color(0.807843, 0.807843, 0.807843, 1)
 pixel_size = 0.02
+alpha_cut = 2
 texture = ExtResource("2_dt321")
 region_enabled = true
 region_rect = Rect2(0, 350, 1024, 660)
