@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvuux8hnoeuwv"]
+[gd_scene load_steps=11 format=3 uid="uid://cvuux8hnoeuwv"]
 
 [ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_ffq2e"]
 [ext_resource type="Texture2D" uid="uid://csc7ooog027ws" path="res://assets/placeholder_menu_background.png" id="1_kgq13"]
 [ext_resource type="Theme" uid="uid://bi41fyh7o6ods" path="res://UI/base_theme.tres" id="3_nkbuk"]
 [ext_resource type="Texture2D" uid="uid://ccoql1wkgjfe7" path="res://Scenes/cat-happiness/grumpy-cat.webp" id="4_4a8dw"]
 [ext_resource type="Texture2D" uid="uid://c00p587j8ox75" path="res://Scenes/cat-happiness/ok-cat.jpg" id="5_pbncb"]
+[ext_resource type="AudioStream" uid="uid://blv7li2belh6f" path="res://SFX/join.wav" id="6_1v388"]
+[ext_resource type="AudioStream" uid="uid://marv38p3xgxi" path="res://SFX/join2.wav" id="7_w2qmp"]
 
 [sub_resource type="SystemFont" id="SystemFont_t5035"]
 
@@ -159,3 +161,11 @@ stretch_mode = 4
 layout_mode = 2
 theme = ExtResource("3_nkbuk")
 text = "Player 2"
+
+[node name="audio_join_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1v388")
+volume_db = 9.21
+
+[node name="audio_join_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_w2qmp")
+volume_db = 9.34
