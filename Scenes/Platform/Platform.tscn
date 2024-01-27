@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxuhg0lv4088a"]
+[gd_scene load_steps=5 format=3 uid="uid://dxuhg0lv4088a"]
 
 [ext_resource type="Script" path="res://Scenes/Platform/Platform.gd" id="1_sm6ki"]
 [ext_resource type="Texture2D" uid="uid://bwg72h4j5r78q" path="res://Cats/TABLE.png" id="2_kupsb"]
+[ext_resource type="Texture2D" uid="uid://chwhs3yxeuj7" path="res://Cats/TABLE-LEG.png" id="3_2yx5u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yxr5t"]
-size = Vector3(5.76929, 3.05426, 0.5)
+size = Vector3(6.0061, 3.05426, 0.5)
 
 [node name="Platform" type="CharacterBody3D"]
 axis_lock_linear_y = true
@@ -24,3 +25,15 @@ shaded = true
 alpha_cut = 2
 texture = ExtResource("2_kupsb")
 region_rect = Rect2(0, 0, 600, 519)
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.540532, 0, 0, 0, 1.2399, 0, 0, 0, 1, -2.25564, -6.14027, -0.176113)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("3_2yx5u")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(0.540532, 0, 0, 0, 1.32462, 0, 0, 0, 1, 2.27185, -6.1806, -0.176113)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("3_2yx5u")
