@@ -47,6 +47,14 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_rpsmo")
+}],
+"loop": true,
+"name": &"happy_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_rpsmo")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_4ifc8")
@@ -98,7 +106,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"slap",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_32s5f"]
@@ -120,7 +128,7 @@ sorting_offset = 1.0
 shaded = true
 alpha_cut = 2
 sprite_frames = SubResource("SpriteFrames_567ui")
-animation = &"happy_walk"
+animation = &"happy_idle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.115144, -0.279115, 0)
