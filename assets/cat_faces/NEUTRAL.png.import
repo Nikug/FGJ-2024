@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccoql1wkgjfe7"
-path="res://.godot/imported/grumpy-cat.webp-1d710ed225b9fe0f8b95c8e7848db56a.ctex"
+uid="uid://cle8418faw02h"
+path="res://.godot/imported/NEUTRAL.png-5d05cd91413ff270969f544e0729485a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/cat-happiness/grumpy-cat.webp"
-dest_files=["res://.godot/imported/grumpy-cat.webp-1d710ed225b9fe0f8b95c8e7848db56a.ctex"]
+source_file="res://assets/cat_faces/NEUTRAL.png"
+dest_files=["res://.godot/imported/NEUTRAL.png-5d05cd91413ff270969f544e0729485a.ctex"]
 
 [params]
 

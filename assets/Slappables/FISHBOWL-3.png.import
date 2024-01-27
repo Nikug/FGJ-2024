@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2vjcy2c2fcpb"
-path.s3tc="res://.godot/imported/manic-cat.jpg-8aff437795be55a0c06f5aec1b904283.s3tc.ctex"
+uid="uid://bqu6jo81108sm"
+path.s3tc="res://.godot/imported/FISHBOWL-3.png-7fe5ad07c9245d2a46e3bd10eb292e68.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Scenes/cat-happiness/manic-cat.jpg"
-dest_files=["res://.godot/imported/manic-cat.jpg-8aff437795be55a0c06f5aec1b904283.s3tc.ctex"]
+source_file="res://assets/Slappables/FISHBOWL-3.png"
+dest_files=["res://.godot/imported/FISHBOWL-3.png-7fe5ad07c9245d2a46e3bd10eb292e68.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://day5aamg1cc62"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_7inmt"]
+[ext_resource type="PackedScene" uid="uid://cy2c6b67uq4c6" path="res://Scenes/PlatformSpawner/PlatformSpawner.tscn" id="1_jw306"]
+[ext_resource type="PackedScene" uid="uid://dthtas16ms1g1" path="res://Scenes/Platform/Start__platform.tscn" id="2_ltv1y"]
+[ext_resource type="PackedScene" uid="uid://caaqhx1wu3fyp" path="res://Scenes/Backkis/new_back_ground.tscn" id="5_50a4n"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t7urw"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_fg4hp"]
+sky_material = SubResource("ProceduralSkyMaterial_t7urw")
+
+[sub_resource type="Environment" id="Environment_7o7v0"]
+background_mode = 2
+sky = SubResource("Sky_fg4hp")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a38pl"]
+size = Vector3(1, 8.0752, 1)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_7inmt")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7o7v0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, 0, 6.18172e-08, -0.707107, -0.707107, 6.18172e-08, -0.707107, 0.707107, 0, 19.8475, 0)
+shadow_enabled = true
+shadow_blur = 1.829
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+current = true
+size = 10.0
+
+[node name="PlatformSpawner" parent="." instance=ExtResource("1_jw306")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="Starting_platForm" parent="." instance=ExtResource("2_ltv1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32572, 0, 0)
+movement_velocity = Vector3(-2, 0, 0)
+
+[node name="Bounds" type="Node3D" parent="."]
+
+[node name="LeftBound" type="StaticBody3D" parent="Bounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.779, 0, 0.5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bounds/LeftBound"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+shape = SubResource("BoxShape3D_a38pl")
+
+[node name="RightBound" type="StaticBody3D" parent="Bounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.549, 0, 0.5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bounds/RightBound"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+shape = SubResource("BoxShape3D_a38pl")
+
+[node name="New_Back-ground" parent="." instance=ExtResource("5_50a4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
