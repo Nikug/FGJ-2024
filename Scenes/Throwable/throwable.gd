@@ -6,20 +6,23 @@ signal slapped
 @export var speed = 750
 @export var slapMax = 10
 @export var slapMin = 1
+var hela = 1
 
 var GLass = {
 	texture=
 	preload("res://assets/Slappables/GLASS.png"),
 	h = 1,
 	w = 1,
-	a = false
+	a = false,
+	hela = 1
 	}
 var reMOte = {
 	texture=
 	preload("res://assets/Slappables/Remote.png"),
 	h = 0.5,
 	w = 0.5,
-	a = false
+	a = false,
+	hela = 1
 	}
 var fISHbOwl ={
 	texture=
@@ -27,7 +30,8 @@ var fISHbOwl ={
 	h = 3,
 	w = 2,
 	a = true,
-	an = "fisu"
+	an = "fisu",
+	hela = 1
 	}
 var lavaLamBbu ={
 	texture=
@@ -35,12 +39,15 @@ var lavaLamBbu ={
 	h = 3,
 	w = 2,
 	a = true,
-	an = "lavalambbu"
+	an = "lavalambbu",
+	hela = 4
 	}
 
 func _ready():
 	var assets = [GLass, reMOte, fISHbOwl, lavaLamBbu]
+
 	var name =  assets[randi() % assets.size()]
+	hela = name.hela
 	if name.a:
 		$Animation.animation = name.an
 		$Animation.play()
@@ -76,7 +83,9 @@ func _physics_process(_delta):
 
 func get_slapped():
 	slapped.emit()
-	movement_velocity = Vector3(randi_range(slapMin, slapMax), randi_range(slapMin, slapMax), randi_range(slapMin, slapMax))
+	hela -= 1
+	if hela == 0:
+		movement_velocity = Vector3(randi_range(slapMin, slapMax), randi_range(slapMin, slapMax), randi_range(slapMin, slapMax))
 
 
 # we can use format strings to pad it to a length of 2 with zeros, e.g. 01:20:12
