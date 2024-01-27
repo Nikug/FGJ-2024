@@ -1,16 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmgdj7psbn33c"]
 
-[ext_resource type="Texture2D" uid="uid://2vjcy2c2fcpb" path="res://cat-happiness/manic-cat.jpg" id="1_ard4l"]
+[ext_resource type="Texture2D" uid="uid://2vjcy2c2fcpb" path="res://Scenes/cat-happiness/manic-cat.jpg" id="1_ard4l"]
 [ext_resource type="Script" path="res://Scenes/Throwable/throwable.gd" id="2_co3ff"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rjy56"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["item"]]
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("2_co3ff")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_rjy56")
-disabled = true
 
 [node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
