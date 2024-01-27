@@ -68,7 +68,6 @@ func _process(_delta):
 		var collision = get_slide_collision(i)
 
 		if collision.get_collider().is_in_group("item"):
-			print("collidaa")
 			if just_slapped && is_slapping_hard:
 				just_slapped = false
 				var item = collision.get_collider()
