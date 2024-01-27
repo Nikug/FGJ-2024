@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://day5aamg1cc62"]
+[gd_scene load_steps=9 format=3 uid="uid://day5aamg1cc62"]
 
 [ext_resource type="PackedScene" uid="uid://cy2c6b67uq4c6" path="res://Scenes/PlatformSpawner/PlatformSpawner.tscn" id="1_jw306"]
 [ext_resource type="PackedScene" uid="uid://dthtas16ms1g1" path="res://Scenes/Platform/Start__platform.tscn" id="2_ltv1y"]
+[ext_resource type="PackedScene" uid="uid://dks5oyiuuctu2" path="res://Scenes/bAcKGrOUNdWaLl/bAcKGrOUNdWaLl.tscn" id="3_706hj"]
 [ext_resource type="PackedScene" uid="uid://bru13edxlte41" path="res://Scenes/player/player.tscn" id="3_tisew"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t7urw"]
@@ -31,6 +32,8 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+current = true
 size = 10.0
 
 [node name="PlatformSpawner" parent="." instance=ExtResource("1_jw306")]
@@ -62,3 +65,6 @@ shape = SubResource("BoxShape3D_a38pl")
 
 [node name="Player" parent="." instance=ExtResource("3_tisew")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="BAcKGrOuNdWaLl" parent="." instance=ExtResource("3_706hj")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, -24.9601)
