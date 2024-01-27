@@ -16,6 +16,7 @@ func _ready():
 	if platform == null:
 		print("No platform :((")
 	collision_shape = $CollisionShape3D
+	$DifficultyTimer.start()
 
 
 func _physics_process(_delta):
@@ -87,3 +88,7 @@ func _get_platform_right_side(instance: CharacterBody3D):
 	var size = instance.get_node("CollisionShape3D").get_shape().size
 	var x = instance.position.x + size.x / 2.0
 	return x
+
+
+func _on_timer_timeout():
+	platform_speed += 0.2 #Replace with function body.
