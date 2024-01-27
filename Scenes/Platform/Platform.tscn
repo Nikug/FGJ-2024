@@ -20,5 +20,7 @@ shape = SubResource("BoxShape3D_yxr5t")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.722873, 0, 0, 0, 0.376998, 0, 0, 0, 1, 0, 0, 0)
+shaded = true
+alpha_cut = 2
 texture = ExtResource("2_kupsb")
 region_rect = Rect2(0, 0, 600, 519)

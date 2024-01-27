@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_7inmt"]
 [ext_resource type="PackedScene" uid="uid://cy2c6b67uq4c6" path="res://Scenes/PlatformSpawner/PlatformSpawner.tscn" id="1_jw306"]
-[ext_resource type="PackedScene" path="res://Scenes/Platform/Start__platform.tscn" id="2_ltv1y"]
-[ext_resource type="PackedScene" uid="uid://dks5oyiuuctu2" path="res://Scenes/bAcKGrOUNdWaLl/bAcKGrOUNdWaLl.tscn" id="3_706hj"]
+[ext_resource type="PackedScene" uid="uid://dthtas16ms1g1" path="res://Scenes/Platform/Start__platform.tscn" id="2_ltv1y"]
+[ext_resource type="PackedScene" uid="uid://caaqhx1wu3fyp" path="res://Scenes/Backkis/new_back_ground.tscn" id="5_50a4n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t7urw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -28,8 +28,9 @@ script = ExtResource("1_7inmt")
 environment = SubResource("Environment_7o7v0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-1, -8.74228e-08, 0, 6.18172e-08, -0.707107, -0.707107, 6.18172e-08, -0.707107, 0.707107, 0, 19.8475, 0)
 shadow_enabled = true
+shadow_blur = 1.829
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
@@ -63,5 +64,5 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 shape = SubResource("BoxShape3D_a38pl")
 
-[node name="BAcKGrOuNdWaLl" parent="." instance=ExtResource("3_706hj")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, -24.9601)
+[node name="New_Back-ground" parent="." instance=ExtResource("5_50a4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
