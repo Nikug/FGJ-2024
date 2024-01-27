@@ -8,6 +8,7 @@ var list_of_platforms = []
 const max_platforms = 10
 @export var percentageFromCenter = 80
 @export var eSinE: PackedScene
+@export var KANUUNA: PackedScene
 
 
 func _ready():
@@ -39,6 +40,10 @@ func _create_eSinE(instance):
 	instance.add_child(i)
 	_position_eSinE(instance, i)
 
+func _CREATE_KANUUNA(instance):
+	var i = KANUUNA.instantiate()
+	instance.add_child(i)
+	_position_eSinE(instance, i)
 
 func _create_platform():
 	var size = collision_shape.get_shape().size
@@ -63,6 +68,8 @@ func _create_platform():
 	var randomi = randi() % 100
 	if randomi < 80:
 		_create_eSinE(instance)
+	if ((randomi > 80) if !$"/root/Gamestate".funModifier else (true)):
+		_CREATE_KANUUNA(instance)
 	add_child(instance)
 
 
