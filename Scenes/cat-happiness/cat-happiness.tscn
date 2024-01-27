@@ -45,9 +45,9 @@ script = ExtResource("1_es1dt")
 [node name="Cat-pic" type="TextureRect" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 28.335
+offset_left = 64.335
 offset_top = 139.795
-offset_right = 135.335
+offset_right = 171.335
 offset_bottom = 244.795
 pivot_offset = Vector2(62, 98)
 texture = ExtResource("2_aeagy")
@@ -82,9 +82,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HappinessBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 1.0
+offset_left = 37.0
 offset_top = 2.0
-offset_right = 801.0
+offset_right = 837.0
 offset_bottom = 802.0
 scale = Vector2(0.2, 0.2)
 rounded = true
@@ -95,9 +95,9 @@ texture_progress = ExtResource("6_ffjhs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1.0
+offset_left = 37.0
 offset_top = 105.0
-offset_right = 801.0
+offset_right = 837.0
 offset_bottom = 905.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_np1se")
