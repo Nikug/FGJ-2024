@@ -3,6 +3,7 @@ extends CharacterBody3D
 signal death
 
 @export var speed = 2.0
+@export var hop_power = 1.0
 @export var gravity = -1.0
 @export var player_id = "1"
 @onready var slap_player = $AudioStreamPlayer3D
@@ -12,6 +13,8 @@ signal death
 var _animated_sprite
 var target_velocity = Vector3.ZERO
 var is_slapping_hard = false
+var is_hopping_in_your_hood = false
+var just_hopped = false
 var slap_sounds = []
 var walk_sounds = []
 var mood = "angry"
@@ -39,9 +42,24 @@ func _ready():
 	confetti = preload("res://Scenes/Confetti/cONFETTI.tscn")
 
 
+func _process(_delta):
+	if Input.is_action_just_pressed("slap_%s" % [player_id]) and not is_hopping_in_your_hood:
+		_slap()
+	if (
+		Input.is_action_just_pressed("hop_%s" % [player_id])
+		and not is_slapping_hard
+		and not is_hopping_in_your_hood
+	):
+		_hop()
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	_check_mood()
+
+	if is_on_wall() and not just_hopped:
+		is_hopping_in_your_hood = false
+
 	var direction = Vector3.ZERO  # The player's movement vector.
 	if is_slapping_hard:
 		direction.x = -1
@@ -54,8 +72,6 @@ func _physics_process(delta):
 			direction.y -= 1
 		if Input.is_action_pressed("move_up_%s" % [player_id]):
 			direction.y += 1
-		if Input.is_action_just_released("slap_%s" % [player_id]):
-			_slap()
 
 	if direction != Vector3.ZERO and not is_slapping_hard:
 		direction = direction.normalized()
@@ -72,6 +88,9 @@ func _physics_process(delta):
 
 	target_velocity.x = direction.x * speed
 	target_velocity.y = direction.y * speed
+
+	if just_hopped:
+		just_hopped = false
 
 	if !is_on_wall():
 		target_velocity.z += delta * gravity
@@ -130,8 +149,15 @@ func _play_walk():
 func _check_mood():
 	mood = score_manager.get_mood(player_id)
 
+
 func _DIE():
 	print("DEATH")
 	death.emit()
 	position = Vector3(0, 0, 0.5)
 	target_velocity.z = 0
+
+
+func _hop():
+	is_hopping_in_your_hood = true
+	just_hopped = true
+	target_velocity.z = hop_power
