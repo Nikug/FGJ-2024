@@ -17,8 +17,8 @@ var GLass = {
 var reMOte = {
 	texture=
 	preload("res://assets/Slappables/Remote.png"),
-	h = 1,
-	w = 1,
+	h = 0.5,
+	w = 0.5,
 	a = false
 	}
 var fISHbOwl ={
@@ -34,12 +34,28 @@ func _ready():
 	var name =  assets[randi() % assets.size()]
 	if name.a:
 		$Animation.play()
+		var current_animation : String = $Animation.animation
+		var sprite_texture : Texture = $Animation.sprite_frames.get_frame_texture(current_animation, 0)
+		var size  = sprite_texture.get_size()
 
+		var box = BoxShape3D.new()
+		box.extents.x = 1
+		box.extents.y = 1.5
+		box.extents.z = 1
+		$CollisionShape3D.shape = box
 	else:
+		var box = BoxShape3D.new()
+
 		$Animation.queue_free()
 		$Sprite.texture  = name.texture
 		$Sprite.hframes  = name.h
 		$Sprite.vframes  = name.w
+		var size  = name.texture.get_size()
+
+		box.extents.x = name.w
+		box.extents.y = name.h
+		box.extents.z = 1
+		$CollisionShape3D.shape = box
 
 
 func _physics_process(_delta):
