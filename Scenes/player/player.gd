@@ -1,7 +1,5 @@
 extends CharacterBody3D
 
-signal death
-
 @export var speed = 2.0
 @export var hop_power = 1.0
 @export var gravity = -1.0
@@ -152,7 +150,7 @@ func _check_mood():
 
 func _DIE():
 	print("DEATH")
-	death.emit()
+	score_manager.decrement_happiness(player_id)
 	position = Vector3(0, 0, 0.5)
 	target_velocity.z = 0
 

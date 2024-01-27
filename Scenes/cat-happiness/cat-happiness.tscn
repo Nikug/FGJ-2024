@@ -3,50 +3,51 @@
 [ext_resource type="Script" path="res://Scenes/cat-happiness/cat-happiness.gd" id="1_es1dt"]
 [ext_resource type="Texture2D" uid="uid://s20smk11whus" path="res://assets/cat_faces/UNHAPPY.png" id="2_aeagy"]
 [ext_resource type="Script" path="res://Scenes/cat-happiness/Cat-pic.gd" id="3_iqhqs"]
-[ext_resource type="Texture2D" uid="uid://cuo640lj7xcu8" path="res://Scenes/cat-happiness/under-texture-2.png" id="4_ovg0q"]
-[ext_resource type="Texture2D" uid="uid://cqiu70xwiglpr" path="res://Scenes/cat-happiness/fill-texture-2.png" id="5_eopgh"]
-[ext_resource type="Texture2D" uid="uid://bdql4vy6nb7h6" path="res://Scenes/cat-happiness/over-texture-2.png" id="5_v707s"]
-[ext_resource type="Texture2D" uid="uid://lxg3d73xuutj" path="res://Scenes/cat-happiness/cat-border.png" id="7_lkl6n"]
+[ext_resource type="Texture2D" uid="uid://kcugjn6kp6jv" path="res://Scenes/cat-happiness/under-texture-3.png" id="4_lojwl"]
+[ext_resource type="Texture2D" uid="uid://rytl6svs0x66" path="res://Scenes/cat-happiness/over-texture-3.png" id="5_rb8bl"]
+[ext_resource type="Texture2D" uid="uid://d0rt7h3kfjiqm" path="res://Scenes/cat-happiness/fill-texture-3.png" id="6_ffjhs"]
+[ext_resource type="Texture2D" uid="uid://b5lr26pbxmuip" path="res://Scenes/cat-happiness/cat-border-2.png" id="7_np1se"]
 
 [node name="CatHappinessUIPanel" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 1.0
-offset_right = -984.0
-offset_bottom = -396.0
+offset_right = -982.0
+offset_bottom = -399.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_es1dt")
 
 [node name="Cat-pic" type="TextureRect" parent="."]
+z_index = 1
 layout_mode = 0
-offset_left = 23.0
-offset_top = 102.0
-offset_right = 130.0
-offset_bottom = 207.0
+offset_left = 28.335
+offset_top = 139.795
+offset_right = 135.335
+offset_bottom = 244.795
 texture = ExtResource("2_aeagy")
 expand_mode = 1
 script = ExtResource("3_iqhqs")
 
 [node name="HappinessBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 11.0
-offset_right = 117.0
-offset_bottom = 114.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 801.0
+offset_bottom = 802.0
+scale = Vector2(0.2, 0.2)
 rounded = true
 fill_mode = 3
-texture_under = ExtResource("4_ovg0q")
-texture_over = ExtResource("5_v707s")
-texture_progress = ExtResource("5_eopgh")
+texture_under = ExtResource("4_lojwl")
+texture_over = ExtResource("5_rb8bl")
+texture_progress = ExtResource("6_ffjhs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 99.0
-offset_right = 127.0
-offset_bottom = 199.0
-texture = ExtResource("7_lkl6n")
+offset_left = 1.0
+offset_top = 105.0
+offset_right = 801.0
+offset_bottom = 905.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_np1se")
