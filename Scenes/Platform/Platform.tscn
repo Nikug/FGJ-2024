@@ -1,12 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxuhg0lv4088a"]
 
 [ext_resource type="Script" path="res://Scenes/Platform/Platform.gd" id="1_sm6ki"]
-[ext_resource type="Texture2D" uid="uid://cohgihvua6d8h" path="res://Art/Placeholder.png" id="2_8h8iq"]
+[ext_resource type="Texture2D" uid="uid://bwg72h4j5r78q" path="res://Cats/TABLE.png" id="2_kupsb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yxr5t"]
 size = Vector3(5.76929, 3.05426, 0.5)
 
 [node name="Platform" type="CharacterBody3D"]
+axis_lock_linear_y = true
+axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -17,5 +19,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
 shape = SubResource("BoxShape3D_yxr5t")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(3.98814, 0, 0, 0, 1.99126, 0, 0, 0, 1, 0, 0, 0)
-texture = ExtResource("2_8h8iq")
+transform = Transform3D(0.722873, 0, 0, 0, 0.376998, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("2_kupsb")
+region_rect = Rect2(0, 0, 600, 519)
