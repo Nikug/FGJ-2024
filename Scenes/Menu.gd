@@ -86,7 +86,7 @@ func _player_joined(inputMethod: String, deviceNumber: String):
 		player_label_1.text = _form_player_label(inputMethod, deviceNumber)
 	elif $"/root/Gamestate".get_playercount() == 2:
 		avatar_2.visible = true
-		avatar_2.modulate = Color(255, 50, 255, 1)
+		avatar_2.modulate = Color.SADDLE_BROWN
 		audio_join_2.play()
 		player_label_2.text = _form_player_label(inputMethod, deviceNumber)
 	
