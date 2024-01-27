@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmgdj7psbn33c"]
 
-[ext_resource type="Texture2D" uid="uid://2vjcy2c2fcpb" path="res://Scenes/cat-happiness/manic-cat.jpg" id="1_ard4l"]
+[ext_resource type="Texture2D" uid="uid://2vjcy2c2fcpb" path="res://assets/cat_faces/manic-cat.jpg" id="1_ard4l"]
 [ext_resource type="Script" path="res://Scenes/Throwable/throwable.gd" id="2_co3ff"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rjy56"]

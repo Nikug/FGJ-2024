@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_ffq2e"]
 [ext_resource type="Texture2D" uid="uid://csc7ooog027ws" path="res://assets/placeholder_menu_background.png" id="1_kgq13"]
 [ext_resource type="Theme" uid="uid://bi41fyh7o6ods" path="res://UI/base_theme.tres" id="3_nkbuk"]
-[ext_resource type="Texture2D" uid="uid://ccoql1wkgjfe7" path="res://Scenes/cat-happiness/grumpy-cat.webp" id="4_4a8dw"]
-[ext_resource type="Texture2D" uid="uid://c00p587j8ox75" path="res://Scenes/cat-happiness/ok-cat.jpg" id="5_pbncb"]
+[ext_resource type="Texture2D" uid="uid://s20smk11whus" path="res://assets/cat_faces/UNHAPPY.png" id="4_kmnyy"]
+[ext_resource type="Texture2D" uid="uid://cle8418faw02h" path="res://assets/cat_faces/NEUTRAL.png" id="5_u12yy"]
 [ext_resource type="AudioStream" uid="uid://blv7li2belh6f" path="res://SFX/join.wav" id="6_1v388"]
 [ext_resource type="AudioStream" uid="uid://marv38p3xgxi" path="res://SFX/join2.wav" id="7_w2qmp"]
 
@@ -125,12 +125,13 @@ size_flags_vertical = 4
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/player_avatar_1"]
 layout_mode = 2
-texture = ExtResource("4_4a8dw")
-expand_mode = 4
+texture = ExtResource("4_kmnyy")
+expand_mode = 5
 stretch_mode = 4
 
 [node name="player_label_1" type="Label" parent="MarginContainer/player_avatar_1"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("3_nkbuk")
 text = "Player 1"
 
@@ -144,8 +145,8 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -250.0
-offset_top = -149.5
-offset_bottom = 149.5
+offset_top = -125.0
+offset_bottom = 125.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -153,12 +154,14 @@ size_flags_vertical = 4
 
 [node name="TextureRect" type="TextureRect" parent="player_avatar_2"]
 layout_mode = 2
-texture = ExtResource("5_pbncb")
-expand_mode = 4
+texture = ExtResource("5_u12yy")
+expand_mode = 5
 stretch_mode = 4
 
 [node name="player_label_2" type="Label" parent="player_avatar_2"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
 theme = ExtResource("3_nkbuk")
 text = "Player 2"
 
