@@ -4,19 +4,17 @@
 
 [sub_resource type="Gradient" id="Gradient_lgllo"]
 offsets = PackedFloat32Array(0, 0.296407, 0.571856, 0.835329, 1)
-colors = PackedColorArray(0.827451, 0.537255, 0.94902, 1, 0.87451, 0.141176, 0.215686, 1, 1, 1, 0, 1, 0.238905, 0.842433, 0, 1, 1, 1, 1, 1)
+colors = PackedColorArray(0.682621, 0.241082, 0.843467, 1, 0.79989, 0, 0.134815, 1, 1, 1, 0, 1, 0.238905, 0.842433, 0, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_wnujr"]
 gradient = SubResource("Gradient_lgllo")
 
-[sub_resource type="Curve" id="Curve_3nj33"]
-min_value = -5.0
-max_value = 5.0
-_data = [Vector2(0, 2.01681), 0.0, 0.0, 0, 0, Vector2(0.149733, -0.588235), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="Curve" id="Curve_017cb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.128342, 0.214286), 0.0, 0.0, 0, 0, Vector2(0.898396, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_nklyk"]
-curve = SubResource("Curve_3nj33")
+curve = SubResource("Curve_017cb")
 
 [sub_resource type="Curve" id="Curve_1jcj8"]
 _data = [Vector2(0, 0.260504), 0.0, 0.0, 0, 0, Vector2(0.128342, 1), 0.0, 0.0, 0, 0, Vector2(0.465241, 0.55042), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -29,15 +27,17 @@ curve = SubResource("Curve_1jcj8")
 angle_max = 360.0
 direction = Vector3(0, 1, 0)
 spread = 180.0
-initial_velocity_min = 10.0
-initial_velocity_max = 10.0
-angular_velocity_max = 360.0
+angular_velocity_max = 1.0
+orbit_velocity_max = 1.0
 orbit_velocity_curve = ExtResource("2_gg4ha")
-radial_velocity_min = -1.0
-radial_velocity_max = 20.0
+radial_velocity_max = 10.0
 radial_velocity_curve = SubResource("CurveTexture_nklyk")
 gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.2
 scale_curve = SubResource("CurveTexture_5aah6")
 color_initial_ramp = SubResource("GradientTexture1D_wnujr")
 hue_variation_max = 1.0
+turbulence_enabled = true
 turbulence_noise_strength = 5.5
+turbulence_influence_max = 0.2

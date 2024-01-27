@@ -15,6 +15,7 @@ var is_slapping_hard = false
 var slap_sounds = []
 var walk_sounds = []
 var mood = "angry"
+var confetti
 
 
 # Called when the node enters the scene tree for the first time.
@@ -34,6 +35,8 @@ func _ready():
 		preload("res://SFX/walk.wav"),
 		preload("res://SFX/walk2.wav"),
 	]
+
+	confetti = preload("res://Scenes/Confetti/cONFETTI.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -93,6 +96,9 @@ func _slap():
 	is_slapping_hard = true
 	_animated_sprite.play("slap")
 	_play_slap_sound()
+	var instance = confetti.instantiate()
+	instance.position = $ConfettiPosition.position
+	add_child(instance)
 
 
 func _dont_slap():
