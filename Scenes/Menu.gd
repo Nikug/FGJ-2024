@@ -19,10 +19,10 @@ func _ready():
 	s_t_ar_tg_am_e.button_down.connect(on_start_button_down)
 	exi_tb_u_tt_on.button_down.connect(on_exit_button_down)
 	
-	avatar_1.modulate = Color(1, 1, 1, 0.2)
-	#player_label_1.text = ""
-	avatar_2.modulate = Color(255, 50, 255, 0.2)
-	#player_label_2.text = ""
+	#avatar_1.modulate = Color(1, 1, 1, 0.6)
+	avatar_1.modulate = Color.DIM_GRAY
+	#avatar_2.modulate = Color(255, 50, 255, 0.6)
+	avatar_2.modulate = Color.DIM_GRAY
 
 func on_start_button_down() -> void:
 	get_tree().change_scene_to_packed(start_level)
