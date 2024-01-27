@@ -1,10 +1,17 @@
 extends Node
 
+@onready var endgame = preload("res://Scenes/end-game/EndGame.tscn")
+
 # Dictionary to store player information
 var players: Dictionary = {}
 var happinessIncrementDefault: int = 20
+var cat_names = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Henry"];
 
-@onready var endgame = preload("res://Scenes/end-game/EndGame.tscn")
+# Placeholder method for getting a random name
+func get_random_name() -> String:
+	var name = cat_names.pop_at(randi() % cat_names.size())
+	
+	return name
 
 func _process(delta):
 	for player in get_all_players():
@@ -23,11 +30,6 @@ func add_player(playerName: String, happyScore: int = 0, displayName: String = "
 	if displayName == "":
 		displayName = get_random_name()
 	players[playerName] = {"displayName": displayName, "happyScore": happyScore}
-
-# Placeholder method for getting a random name
-func get_random_name() -> String:
-	var names = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Henry"]
-	return names[randi() % names.size()]
 
 func has_player(playerName: String) -> bool:
 	return players.has(playerName)

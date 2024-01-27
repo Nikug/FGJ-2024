@@ -85,11 +85,13 @@ func _player_joined(inputMethod: String, deviceNumber: String):
 		avatar_1.visible = true
 		avatar_1.modulate = Color(1, 1, 1, 1)
 		audio_join_1.play()
-		player_label_1.text = _form_player_label(inputMethod, deviceNumber)
+		#player_label_1.text = _form_player_label(inputMethod, deviceNumber)
+		player_label_1.text = $"/root/Gamestate".get_player(inputMethod + deviceNumber).displayName
 	elif $"/root/Gamestate".get_playercount() == 2:
 		avatar_2.visible = true
 		avatar_2.material = ShaderMaterial.new()
 		avatar_2.material.shader = GRAY
 		audio_join_2.play()
-		player_label_2.text = _form_player_label(inputMethod, deviceNumber)
+		#player_label_2.text = _form_player_label(inputMethod, deviceNumber)
+		player_label_2.text = $"/root/Gamestate".get_player(inputMethod + deviceNumber).displayName
 	
