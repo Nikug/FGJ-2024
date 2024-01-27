@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c00p587j8ox75"
-path="res://.godot/imported/ok-cat.jpg-207db5b8fc849b675fe0abe359e92e25.ctex"
+uid="uid://2vjcy2c2fcpb"
+path="res://.godot/imported/manic-cat.jpg-8aff437795be55a0c06f5aec1b904283.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cat-happiness/ok-cat.jpg"
-dest_files=["res://.godot/imported/ok-cat.jpg-207db5b8fc849b675fe0abe359e92e25.ctex"]
+source_file="res://Scenes/cat-happiness/manic-cat.jpg"
+dest_files=["res://.godot/imported/manic-cat.jpg-8aff437795be55a0c06f5aec1b904283.ctex"]
 
 [params]
 

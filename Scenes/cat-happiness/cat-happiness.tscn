@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://do2tbdnpno1a"]
 
-[ext_resource type="Script" path="res://cat-happiness/cat-happiness.gd" id="1_es1dt"]
-[ext_resource type="Texture2D" uid="uid://c00p587j8ox75" path="res://cat-happiness/ok-cat.jpg" id="2_vb600"]
-[ext_resource type="Script" path="res://cat-happiness/Cat-pic.gd" id="3_iqhqs"]
-[ext_resource type="Script" path="res://cat-happiness/HappinessBar.gd" id="4_w41ml"]
+[ext_resource type="Script" path="res://Scenes/cat-happiness/cat-happiness.gd" id="1_es1dt"]
+[ext_resource type="Texture2D" uid="uid://c00p587j8ox75" path="res://Scenes/cat-happiness/ok-cat.jpg" id="2_vb600"]
+[ext_resource type="Script" path="res://Scenes/cat-happiness/Cat-pic.gd" id="3_iqhqs"]
+[ext_resource type="Script" path="res://Scenes/cat-happiness/HappinessBar.gd" id="4_w41ml"]
 
 [node name="CatHappinessUIPanel" type="Control"]
 layout_mode = 3
@@ -21,9 +21,9 @@ script = ExtResource("1_es1dt")
 [node name="Cat-pic" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 51.0
-offset_top = 124.0
+offset_top = 97.0
 offset_right = 111.0
-offset_bottom = 202.0
+offset_bottom = 175.0
 texture = ExtResource("2_vb600")
 expand_mode = 1
 script = ExtResource("3_iqhqs")
@@ -31,8 +31,8 @@ script = ExtResource("3_iqhqs")
 [node name="HappinessBar" type="ProgressBar" parent="."]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 25.0
+offset_top = 9.0
 offset_right = 128.0
-offset_bottom = 113.0
+offset_bottom = 97.0
 fill_mode = 3
 script = ExtResource("4_w41ml")

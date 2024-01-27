@@ -6,6 +6,7 @@ var platform
 var collision_shape
 var list_of_platforms = []
 const max_platforms = 10
+@export var eSinE: PackedScene
 
 
 func _ready():
@@ -22,6 +23,16 @@ func _physics_process(_delta):
 		if list_of_platforms.size() > max_platforms:
 			var kill_this = list_of_platforms.pop_front()
 			kill_this.queue_free()
+
+
+func _create_eSinE(instance):
+	var i = eSinE.instantiate()
+	add_child(i)
+	i.position.x = instance.position.x
+	i.position.y = instance.position.y + 1
+	i.movement_velocity = Vector3.LEFT * platform_speed
+	print(i.position.y)
+	print(instance.position.y)
 
 
 func _create_platform():
@@ -43,14 +54,23 @@ func _create_platform():
 		)
 
 	instance.movement_velocity = Vector3.LEFT * platform_speed
-	add_child(instance)
 	list_of_platforms.append(instance)
+	var randomi = randi() % 100
+	if randomi < 30:
+		_create_eSinE(instance)
+	add_child(instance)
 
 
 func _get_area_left_side():
 	var size = collision_shape.get_shape().size
 	var x = position.x - size.x / 2.0
 	return x
+
+
+func _get_platform_top(instance: CharacterBody3D):
+	var size = instance.get_node("CollisionShape3D").get_shape().size
+	var y = instance.position.y - size.y / 2.0
+	return y
 
 
 func _get_platform_left_side(instance: CharacterBody3D):
