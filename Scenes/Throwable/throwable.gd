@@ -4,6 +4,8 @@ signal slapped
 
 @export var movement_velocity = Vector3.ZERO
 @export var speed = 750
+@export var slapMax = 10
+@export var slapMin = 1
 
 var GLass = {
 	texture=
@@ -47,4 +49,7 @@ func _physics_process(_delta):
 
 func get_slapped():
 	slapped.emit()
-	queue_free()
+	movement_velocity = Vector3(randi_range(slapMin, slapMax), randi_range(slapMin, slapMax), randi_range(slapMin, slapMax))
+
+
+# we can use format strings to pad it to a length of 2 with zeros, e.g. 01:20:12
