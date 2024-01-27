@@ -6,7 +6,7 @@ extends CharacterBody3D
 @export var player_id = "1"
 @export var is_gray = false
 @onready var slap_player = $AudioStreamPlayer3D
-@onready var walk_player = $AudioStreamPlayer3D
+@onready var walk_player = $WalkPlayer
 @onready var score_manager = $"/root/Gamestate"
 
 var _animated_sprite
