@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/PlatformSpawner/PlatformSpawner.gd" id="1_8jhlv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fd26m"]
-size = Vector3(1, 4.97266, 1)
+size = Vector3(1, 2.40796, 1)
 
 [node name="PlatformSpawner" type="Area3D"]
 script = ExtResource("1_8jhlv")

@@ -29,31 +29,33 @@ func _create_platform():
 	instance.position = Vector3.ZERO
 	instance.position.y = y_position
 	if list_of_platforms.size() == 0:
-		instance.position.x = _get_area_left_side() + _get_platform_left_side(instance)
+		instance.position.x = (
+			-(position.x - _get_area_left_side()) - _get_platform_left_side(instance)
+		)
 	else:
 		var last_platform = list_of_platforms[-1]
 		instance.position.x = (
 			_get_platform_right_side(last_platform) - _get_platform_left_side(instance)
 		)
 
-	instance.velocity = Vector3.LEFT * platform_speed
+	instance.movement_velocity = Vector3.LEFT * platform_speed
 	add_child(instance)
 	list_of_platforms.append(instance)
 
 
 func _get_area_left_side():
 	var size = collision_shape.get_shape().size
-	var x = position.x - size.x / 2
+	var x = position.x - size.x / 2.0
 	return x
 
 
 func _get_platform_left_side(instance: CharacterBody3D):
 	var size = instance.get_node("CollisionShape3D").get_shape().size
-	var x = instance.position.x - size.x / 2
+	var x = instance.position.x - size.x / 2.0
 	return x
 
 
 func _get_platform_right_side(instance: CharacterBody3D):
 	var size = instance.get_node("CollisionShape3D").get_shape().size
-	var x = instance.position.x + size.x / 2
+	var x = instance.position.x + size.x / 2.0
 	return x
