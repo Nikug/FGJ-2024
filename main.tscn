@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8a33mrirgi1"]
+[gd_scene load_steps=6 format=3 uid="uid://day5aamg1cc62"]
+[gd_scene load_steps=6 format=3 uid="uid://day5aamg1cc62"]
 
 [ext_resource type="PackedScene" uid="uid://cy2c6b67uq4c6" path="res://Scenes/PlatformSpawner/PlatformSpawner.tscn" id="1_jw306"]
 [ext_resource type="PackedScene" uid="uid://dks5oyiuuctu2" path="res://Scenes/bAcKGrOUNdWaLl/bAcKGrOUNdWaLl.tscn" id="2_svdnn"]
+[ext_resource type="PackedScene" uid="uid://bru13edxlte41" path="res://Scenes/player/player.tscn" id="2_ruqxg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t7urw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -30,6 +32,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 
 [node name="PlatformSpawner" parent="." instance=ExtResource("1_jw306")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_ruqxg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 1.153)
 
 [node name="BAcKGrOuNdWaLl" parent="." instance=ExtResource("2_svdnn")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.0537186, 7.62939e-06, -29.9988)
