@@ -29,15 +29,6 @@ func _create_platform():
 	instance.position = Vector3.ZERO
 	instance.position.y = y_position
 	if list_of_platforms.size() == 0:
-		print(
-			position.x,
-			" ",
-			instance.position.x,
-			" ",
-			_get_area_left_side(),
-			" ",
-			_get_platform_left_side(instance)
-		)
 		instance.position.x = (
 			-(position.x - _get_area_left_side()) - _get_platform_left_side(instance)
 		)
