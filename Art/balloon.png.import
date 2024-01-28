@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4ppbrlbfhnv1"
-path.s3tc="res://.godot/imported/KANUUNA.PNG-cc347bb1b01a0988c3f3fb5eea72944a.s3tc.ctex"
+uid="uid://6iryqob324x7"
+path.s3tc="res://.godot/imported/balloon.png-a9359e97704dafd0c1c783c1dcd95eb5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Scenes/PEHILÄISKANUUNA/KANUUNA.PNG"
-dest_files=["res://.godot/imported/KANUUNA.PNG-cc347bb1b01a0988c3f3fb5eea72944a.s3tc.ctex"]
+source_file="res://Art/balloon.png"
+dest_files=["res://.godot/imported/balloon.png-a9359e97704dafd0c1c783c1dcd95eb5.s3tc.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://day5aamg1cc62"]
+[gd_scene load_steps=11 format=3 uid="uid://day5aamg1cc62"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7inmt"]
 [ext_resource type="PackedScene" uid="uid://cy2c6b67uq4c6" path="res://Scenes/PlatformSpawner/PlatformSpawner.tscn" id="1_jw306"]
@@ -22,7 +22,10 @@ glow_enabled = true
 size = Vector3(1, 8.0752, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_22ygw"]
-size = Vector3(41.7836, 13.3142, 1)
+size = Vector3(453.142, 202.017, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_muvjk"]
+size = Vector3(1, 31.7999, 12.8243)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_7inmt")
@@ -73,8 +76,12 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bounds/Killzone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.452766, 0.273071, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.20773, -35.8535, 0)
 shape = SubResource("BoxShape3D_22ygw")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Bounds/Killzone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5997, -6.97794, 4.24127)
+shape = SubResource("BoxShape3D_muvjk")
 
 [node name="New_Back-ground" parent="." instance=ExtResource("5_50a4n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)

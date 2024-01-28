@@ -1,5 +1,6 @@
 extends Node3D
 
+var menu = preload("res://Scenes/Menu.tscn")
 var player = preload("res://Scenes/player/player.tscn")
 var laughmeter = preload("res://Scenes/cat-happiness/cat-happiness.tscn")
 const GRAY = preload("res://Shaders/gray.gdshader")
@@ -26,7 +27,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("main_menu"):
+		$"/root/Gamestate".reset_game(true)
+		get_tree().change_scene_to_packed(menu)
 		
 
 func _spawn_player(pos: Vector3, id, tint: bool):
