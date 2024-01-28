@@ -6,7 +6,7 @@ extends Node
 var players: Dictionary = {}
 var happinessIncrementDefault: int = 10
 var funModifier = false
-var cat_names = ["Cheese Wizard", "Miisu", "Mutu", "El Pörrö", "Massimo", "Mr. Fluffington", "Socks III", "Zorro", "Pörrö", "😾 mäy 😾"] if !funModifier else ["Jussi", "Pekka", "Alex"];
+var cat_names = ["Cheese Wizard", "Miisu", "Mutu", "El Pörrö", "Massimo", "Mr. Fluffington", "Socks III", "Zorro", "Pörrö", "😾 mäy 😾", "Lasagne", "Loaf", "Lürppis"] if !funModifier else ["Jussi", "Pekka", "Alex"];
 
 func get_random_name() -> String:
 	var name = cat_names.pop_at(randi() % cat_names.size())
@@ -21,7 +21,7 @@ func _process(delta):
 func reset_game(remove_players = false):
 	if (remove_players):
 		players = {}
-		cat_names = ["Cheese Wizard", "Miisu", "Mutu", "El Pörrö", "Massimo", "Mr. Fluffington", "Socks III", "Zorro", "Pörrö", "😾 mäy 😾"] if !funModifier else ["Jussi", "Pekka", "Alex"];
+		cat_names = ["Cheese Wizard", "Miisu", "Mutu", "El Pörrö", "Massimo", "Mr. Fluffington", "Socks III", "Zorro", "Pörrö", "😾 mäy 😾", "Lasagne", "Loaf", "Lürppis"] if !funModifier else ["Jussi", "Pekka", "Alex"];
 	else:
 		for player in get_all_players().keys():
 			set_happiness_score(player, 0)
