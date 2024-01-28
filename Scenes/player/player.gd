@@ -87,7 +87,8 @@ func _process(_delta):
 		#	_DIE()
 		#	break
 		if collision.get_collider().is_in_group("KANUUNA"):
-			_PEHILAISKENNOON()
+			var KANUUNA = collision.get_collider()
+			_PEHILAISKENNOON(KANUUNA)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -96,6 +97,8 @@ func _physics_process(delta):
 
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
+		if (!collision.get_collider()): 
+			continue
 		if collision.get_collider().is_in_group("killzone"):
 			_DIE()
 
@@ -202,14 +205,14 @@ func _DIE():
 	target_velocity.z = 0
 
 
-func _PEHILAISKENNOON():
+func _PEHILAISKENNOON(KANUUNA: CharacterBody3D):
 	score_manager.decrement_happiness(player_id, 20)
+	KANUUNA.queue_free()
 	target_velocity = Vector3(0, 0, 2.5)
-	$"PEHILAISET".visible = true
 	await get_tree().create_timer(1).timeout
 	target_velocity = Vector3(0, 0, 0)
 	await get_tree().create_timer(1).timeout
-	$"PEHILAISET".visible = false
+	
 
 
 func _hop():

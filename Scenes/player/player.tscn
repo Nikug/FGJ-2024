@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bru13edxlte41"]
+[gd_scene load_steps=61 format=3 uid="uid://bru13edxlte41"]
 
 [ext_resource type="Script" path="res://Scenes/player/player.gd" id="1_xuaj4"]
 [ext_resource type="Texture2D" uid="uid://ut4avnyhfvx3" path="res://Cats/NH-1.png" id="2_1gega"]
@@ -58,7 +58,6 @@
 [ext_resource type="Texture2D" uid="uid://eotng71wdejm" path="res://Cats/SLAP-1-GREY.png" id="46_v7ubn"]
 [ext_resource type="Texture2D" uid="uid://c12a4fqywniru" path="res://Cats/SLAP-2-GREY.png" id="47_mppwe"]
 [ext_resource type="Texture2D" uid="uid://bji1psp3mfmft" path="res://Cats/SLAP-3-GREY.png" id="48_5pj7s"]
-[ext_resource type="Texture2D" uid="uid://g3q6kwg5d3ep" path="res://Scenes/player/PEHILÄISIÄ.png" id="59_0abrb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_567ui"]
 animations = [{
@@ -387,8 +386,3 @@ volume_db = -20.0
 
 [node name="ConfettiPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.697518, -0.189176, 0)
-
-[node name="PEHILAISET" type="Sprite3D" parent="."]
-transform = Transform3D(0.445, 0, 0, 0, 0.445, 0, 0, 0, 0.445, 0, 0, 0)
-visible = false
-texture = ExtResource("59_0abrb")
