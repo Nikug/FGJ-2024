@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bdwksvddbgyhh" path="res://Art/cats-ai-bg.jpg" id="2_wjglr"]
 [ext_resource type="Theme" uid="uid://bi41fyh7o6ods" path="res://UI/base_theme.tres" id="3_nkbuk"]
 [ext_resource type="Texture2D" uid="uid://s20smk11whus" path="res://assets/cat_faces/UNHAPPY.png" id="4_kmnyy"]
-[ext_resource type="AudioStream" uid="uid://blv7li2belh6f" path="res://SFX/join.wav" id="6_1v388"]
+[ext_resource type="AudioStream" uid="uid://bprhp10rediic" path="res://SFX/join.wav" id="6_1v388"]
 [ext_resource type="Texture2D" uid="uid://byy16yt26vtvn" path="res://assets/cat_faces/jussi.PNG" id="7_v8yue"]
-[ext_resource type="AudioStream" uid="uid://marv38p3xgxi" path="res://SFX/join2.wav" id="7_w2qmp"]
+[ext_resource type="AudioStream" uid="uid://bffrjrprtt8tp" path="res://SFX/join2.wav" id="7_w2qmp"]
 [ext_resource type="Texture2D" uid="uid://bej70lmhcqmop" path="res://assets/cat_faces/alex.PNG" id="8_on6ve"]
 [ext_resource type="Texture2D" uid="uid://dquitn5aykrxj" path="res://assets/cat_faces/pekka.PNG" id="9_ojm5b"]
 
