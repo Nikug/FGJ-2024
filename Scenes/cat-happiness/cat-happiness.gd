@@ -11,7 +11,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	var mood = $"/root/Gamestate".get_mood(player_id)
-	happyScore = $"/root/Gamestate".get_happiness_score(player_id)
+	
+	var newHappyScore = $"/root/Gamestate".get_happiness_score(player_id)
+	
+	if (happyScore != newHappyScore):
+		$"Cat-pic/score-plus".visible = true
+		$"Cat-pic/score-plus".text = "+ " + str(newHappyScore - happyScore)
+		await get_tree().create_timer(1).timeout
+		$"Cat-pic/score-plus".visible = false
+	
+	happyScore = newHappyScore
 
 	match mood:
 		"angry":

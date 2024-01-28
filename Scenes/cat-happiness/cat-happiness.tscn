@@ -60,6 +60,27 @@ libraries = {
 "": SubResource("AnimationLibrary_dmfny")
 }
 
+[node name="score-plus" type="Label" parent="Cat-pic"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.881635
+anchor_top = -0.163857
+anchor_right = 0.881635
+anchor_bottom = -0.163857
+offset_left = -77.33
+offset_top = 144.055
+offset_right = -7.33002
+offset_bottom = 178.055
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_g3hx5")
+theme_override_font_sizes/font_size = 24
+text = "+ 20"
+horizontal_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
 [node name="Label" type="Label" parent="Cat-pic"]
 layout_mode = 1
 anchors_preset = 7
