@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://day5aamg1cc62"]
+[gd_scene load_steps=11 format=3 uid="uid://day5aamg1cc62"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7inmt"]
 [ext_resource type="PackedScene" uid="uid://cy2c6b67uq4c6" path="res://Scenes/PlatformSpawner/PlatformSpawner.tscn" id="1_jw306"]
