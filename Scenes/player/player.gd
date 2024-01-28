@@ -22,6 +22,7 @@ var D_E_A_T_H_S_O_U_N_D
 var mood = "angry"
 var confetti
 var blood
+var PUTUM
 
 
 func a(animation: String):
@@ -58,6 +59,7 @@ func _ready():
 	]
 
 	D_E_A_T_H_S_O_U_N_D = preload("res://SFX/D E A T H.wav")
+	PUTUM = preload("res://SFX/pop.wav")
 
 	confetti = preload("res://Scenes/Confetti/cONFETTI.tscn")
 	blood = preload("res://Scenes/Confetti/bLOOD.tscn")
@@ -83,9 +85,6 @@ func _process(_delta):
 				item.get_slapped()
 				score_manager.increment_happiness(player_id)
 				break
-		#if collision.get_collider().is_in_group("killzone"): # if player no die reinstate this i remove in merge :blessed:
-		#	_DIE()
-		#	break
 		if collision.get_collider().is_in_group("KANUUNA"):
 			var KANUUNA = collision.get_collider()
 			_PEHILAISKENNOON(KANUUNA)
@@ -206,6 +205,8 @@ func _DIE():
 
 
 func _PEHILAISKENNOON(KANUUNA: CharacterBody3D):
+	slap_player.stream = PUTUM
+	slap_player.play()
 	score_manager.decrement_happiness(player_id, 20)
 	KANUUNA.queue_free()
 	target_velocity = Vector3(0, 0, 2.5)
