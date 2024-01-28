@@ -191,7 +191,7 @@ func _DIE():
 	instance.position = position
 	add_child(instance)
 
-	score_manager.decrement_happiness(player_id, 10)
+	score_manager.decrement_happiness(player_id, 100)
 	position = Vector3(0, 0, 0.5)
 	target_velocity.z = 0
 
