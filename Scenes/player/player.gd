@@ -80,6 +80,9 @@ func _process(_delta):
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 
+		if !collision.get_collider():
+			continue
+
 		if collision.get_collider().is_in_group("item"):
 			if just_slapped && is_slapping_hard:
 				just_slapped = false
@@ -98,7 +101,7 @@ func _physics_process(delta):
 
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		if (!collision.get_collider()): 
+		if !collision.get_collider():
 			continue
 		if collision.get_collider().is_in_group("killzone"):
 			_DIE()
@@ -219,7 +222,6 @@ func _PEHILAISKENNOON(KANUUNA: CharacterBody3D):
 	await get_tree().create_timer(1).timeout
 	target_velocity = Vector3(0, 0, 0)
 	await get_tree().create_timer(1).timeout
-	
 
 
 func _hop():
