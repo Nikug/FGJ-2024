@@ -4,7 +4,7 @@
   "description": "Game jam 2024",
   "main": "index.js",
   "scripts": {
-    "serve-html": "serve ./build",
+    "serve-html": "serve --config ../serve.json ./build ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
