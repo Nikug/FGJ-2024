@@ -388,7 +388,7 @@ volume_db = -20.0
 [node name="ConfettiPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.697518, -0.189176, 0)
 
-[node name="PEHILÄISET" type="Sprite3D" parent="."]
+[node name="PEHILAISET" type="Sprite3D" parent="."]
 transform = Transform3D(0.445, 0, 0, 0, 0.445, 0, 0, 0, 0.445, 0, 0, 0)
 visible = false
 texture = ExtResource("59_0abrb")

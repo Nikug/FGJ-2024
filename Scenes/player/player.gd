@@ -18,6 +18,7 @@ var just_slapped = false
 var slap_sounds = []
 var walk_sounds = []
 var hop_sounds = []
+var D_E_A_T_H_S_O_U_N_D
 var mood = "angry"
 var confetti
 var blood
@@ -56,6 +57,8 @@ func _ready():
 		preload("res://SFX/hop2.wav"),
 	]
 
+	D_E_A_T_H_S_O_U_N_D = preload("res://SFX/D E A T H.wav")
+
 	confetti = preload("res://Scenes/Confetti/cONFETTI.tscn")
 	blood = preload("res://Scenes/Confetti/bLOOD.tscn")
 
@@ -84,7 +87,7 @@ func _process(_delta):
 		#	_DIE()
 		#	break
 		if collision.get_collider().is_in_group("KANUUNA"):
-			_PEHILÄISKENNOON()
+			_PEHILAISKENNOON()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -191,19 +194,23 @@ func _DIE():
 	instance.position = position
 	add_child(instance)
 
+	slap_player.stream = D_E_A_T_H_S_O_U_N_D
+	slap_player.play()
+
 	score_manager.decrement_happiness(player_id, 100)
 	position = Vector3(0, 0, 0.5)
 	target_velocity.z = 0
 
-func _PEHILÄISKENNOON():
-	print("PEHILÄISKENNOON")
+
+func _PEHILAISKENNOON():
 	score_manager.decrement_happiness(player_id, 20)
 	target_velocity = Vector3(0, 0, 2.5)
-	$"PEHILÄISET".visible = true
+	$"PEHILAISET".visible = true
 	await get_tree().create_timer(1).timeout
 	target_velocity = Vector3(0, 0, 0)
 	await get_tree().create_timer(1).timeout
-	$"PEHILÄISET".visible = false
+	$"PEHILAISET".visible = false
+
 
 func _hop():
 	is_hopping_in_your_hood = true

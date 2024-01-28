@@ -8,53 +8,26 @@ signal slapped
 @export var slapMin = 1
 var hela = 1
 
+var timer = Timer.new()
+
 var assets = [
-	{
-		texture=preload("res://assets/Slappables/GLASS.png"),
-		h = 1,
-		w = 1,
-		a = false,
-		hela = 1
-		},
-	{
-		h = 1.5,
-		w = 1,
-		a = true,
-		an = "fisu",
-		hela = 1
-		},
-	{
-		h = 2,
-		w = 1,
-		a = true,
-		an = "lavalambbu",
-		hela = 4
-		},
-	{
-		h = 1,
-		w = 1,
-		a = true,
-		an = "limu",
-		hela = 1
-		},
-	{
-		h = 0.5,
-		w = 0.5,
-		a = true,
-		an = "kaukkari",
-		hela = 1
-		}]
+	{texture = preload("res://assets/Slappables/GLASS.png"), h = 1, w = 1, a = false, hela = 1},
+	{h = 1.5, w = 1, a = true, an = "fisu", hela = 1},
+	{h = 2, w = 1, a = true, an = "lavalambbu", hela = 4},
+	{h = 1, w = 1, a = true, an = "limu", hela = 1},
+	{h = 0.5, w = 0.5, a = true, an = "kaukkari", hela = 1}
+]
+
 
 func _ready():
-
-	var selectedAsset =  assets[randi() % assets.size()]
+	var selectedAsset = assets[randi() % assets.size()]
 	hela = selectedAsset.hela
 	if selectedAsset.a:
 		$Animation.animation = selectedAsset.an
 		$Animation.play()
 	else:
 		$Animation.queue_free()
-		$Sprite.texture  = selectedAsset.texture
+		$Sprite.texture = selectedAsset.texture
 
 	var box = BoxShape3D.new()
 	box.extents.x = selectedAsset.w
@@ -62,16 +35,25 @@ func _ready():
 	box.extents.z = 1
 	$CollisionShape3D.shape = box
 
+	timer.connect("timeout", $"/root/Audioplayer".break_stuff)
+	timer.wait_time = 1.0
+	timer.one_shot = true
+	add_child(timer)
+
 
 func _physics_process(_delta):
 	velocity = movement_velocity
 	move_and_slide()
 
+
 func get_slapped():
 	slapped.emit()
 	hela -= 1
 	if hela == 0:
+		timer.start()
 		$CollisionShape3D.disabled = true
-		movement_velocity = Vector3(randi_range(slapMin, slapMax), randi_range(slapMin, slapMax), randi_range(slapMin, slapMax))
-
-
+		movement_velocity = Vector3(
+			randi_range(slapMin, slapMax),
+			randi_range(slapMin, slapMax),
+			randi_range(slapMin, slapMax)
+		)
