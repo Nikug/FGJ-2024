@@ -1,0 +1,35 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=6 format=3 uid="uid://wjmierphaouk"]
+
+[ext_resource type="Texture2D" uid="uid://d2nphsjx62cbc" path="res://Scenes/Confetti/cONFETTI.tres" id="1_n57xo"]
+
+[sub_resource type="Curve" id="Curve_017cb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.128342, 0.214286), 0.0, 0.0, 0, 0, Vector2(0.898396, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_nklyk"]
+curve = SubResource("Curve_017cb")
+
+[sub_resource type="Curve" id="Curve_1jcj8"]
+_data = [Vector2(0, 0.260504), 0.0, 0.0, 0, 0, Vector2(0.128342, 1), 0.0, 0.0, 0, 0, Vector2(0.465241, 0.55042), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_5aah6"]
+curve = SubResource("Curve_1jcj8")
+
+[resource]
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 180.0
+angular_velocity_max = 1.0
+orbit_velocity_max = 1.0
+orbit_velocity_curve = ExtResource("1_n57xo")
+radial_velocity_max = 10.0
+radial_velocity_curve = SubResource("CurveTexture_nklyk")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_5aah6")
+hue_variation_max = 0.15
+turbulence_enabled = true
+turbulence_noise_strength = 5.5
+turbulence_influence_max = 0.2

@@ -23,6 +23,7 @@ var mood = "angry"
 var confetti
 var blood
 var PUTUM
+var SAVUA
 
 
 func a(animation: String):
@@ -63,6 +64,7 @@ func _ready():
 
 	confetti = preload("res://Scenes/Confetti/cONFETTI.tscn")
 	blood = preload("res://Scenes/Confetti/bLOOD.tscn")
+	SAVUA = preload("res://Scenes/Confetti/SAVUA.tscn")
 
 
 func _process(_delta):
@@ -208,6 +210,10 @@ func _PEHILAISKENNOON(KANUUNA: CharacterBody3D):
 	slap_player.stream = PUTUM
 	slap_player.play()
 	score_manager.decrement_happiness(player_id, 20)
+	var instance = SAVUA.instantiate()
+	instance.position = KANUUNA.position
+	instance.position.z += 1
+	add_child(instance)
 	KANUUNA.queue_free()
 	target_velocity = Vector3(0, 0, 2.5)
 	await get_tree().create_timer(1).timeout

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d18yt34mw41cp"]
+
+[ext_resource type="Script" path="res://Scenes/Confetti/cONFETTI.gd" id="1_384mj"]
+[ext_resource type="Material" uid="uid://wjmierphaouk" path="res://Scenes/Confetti/SAVUMATERIAALI.tres" id="1_e8wyc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uevfl"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_l61c0"]
+material = SubResource("StandardMaterial3D_uevfl")
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+emitting = false
+amount = 25
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+fract_delta = false
+process_material = ExtResource("1_e8wyc")
+draw_pass_1 = SubResource("QuadMesh_l61c0")
+script = ExtResource("1_384mj")
