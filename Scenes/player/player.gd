@@ -64,7 +64,7 @@ func _ready():
 
 
 func _process(_delta):
-	if Input.is_action_just_pressed("slap_%s" % [player_id]) and not is_hopping_in_your_hood:
+	if Input.is_action_just_pressed("slap_%s" % [player_id]) and is_on_wall():
 		_slap()
 	if (
 		Input.is_action_just_pressed("hop_%s" % [player_id])
