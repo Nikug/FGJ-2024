@@ -4,6 +4,7 @@
   "description": "Game jam 2024",
   "main": "index.js",
   "scripts": {
+    "serve-html": "serve ./build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Nikug/FGJ-2024/issues"
   },
-  "homepage": "https://github.com/Nikug/FGJ-2024#readme"
+  "homepage": "https://github.com/Nikug/FGJ-2024#readme",
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
 }
