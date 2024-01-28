@@ -1,8 +1,6 @@
 extends AudioStreamPlayer
 
-var menuMusic: AudioStream = preload(
-	"res://music/elevator-music-bossa-nova-background-music-version-60s-10900.mp3"
-)
+var menuMusic: AudioStream = preload("res://music/FGJ 2024 Menu.mp3")
 var level1Music: AudioStream = preload("res://music/FGJ 2024.mp3")
 
 var break_sounds = []
